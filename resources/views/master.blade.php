@@ -13,6 +13,8 @@
 
 	<link rel="stylesheet" type="text/css" href="css/line.css">
 
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+
 	<style type="text/css">
 		@font-face {
 			font-family: Gravity;
@@ -20,28 +22,34 @@
 		}		
 		body {
 			height: 100%;
-			min-height: 100%;
-			background-color: #f3f3f3;
+			max-height: 100%;
+			background-color: #ececec;
 			font-family: Gravity;
-		}
-		.container {
-			font-size: 150%;
 		}
 		.content-title {
 			font-size: 200%;
 			margin-bottom: -20px;
 		}
 		.content {
-			margin-top: 15px;
+      text-align: center;
+      font-size: 150%;
 		}
+    .logo-big {
+      max-width: 400px;
+    }
+    .logo-big-wrapper {
+      height: 100%;
+      padding: 20px;
+    }
 	</style>
 
 	@yield('style')
 </head>
 
 <body>
-	<div style="height:200px;background-color: blue;"></div>
-	<div class="content container">
+	@include('parts.banner')
+
+	<div class="content">
 		@yield('content')
 	</div>
 

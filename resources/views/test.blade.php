@@ -12,44 +12,20 @@
 		border-bottom: 1px solid #c4c4c4;
 		padding: 10px; 
 	}
-	hr {
-		margin-top: 5px;
-		margin-bottom: 5px;
-	}
-	img {
-		width: 100%;
-		height: auto;
-	}
-	.wrapper {
-		margin-right: auto;
-		margin-left: auto;
-	}
-	.slide {
-	
+	.para {
+		height: 300px;
+		background-color: #c4e0d5;
 	}
 	</style>
 @endsection	
 
 @section('content')
-	<!--<div class="wrapper">
-		<div class="col-xs-1 corner">
-			<div class="nav-btn">About Us</div>
-			<hr class="style14">
-			<div class="nav-btn">Activity</div>
-			<hr class="style14">
-			<div class="nav-btn">Arsneal</div>
-		</div>-->	
-		<div class="col-xs-4 left">
-			<img src="http://via.placeholder.com/600x800">
+	<div class="para">
+		<div class="col-md-8">
+			sdfsdfsdfsdfs
 		</div>
-		<div class="col-xs-8 right">
-			<div class="col-xs-6"><img src="http://via.placeholder.com/400x400"></div>
-			<div class="col-xs-6"><img src="http://via.placeholder.com/400x400"></div>
-			<div class="col-xs-12" style="position:absolute; bottom:0;"><img class="low" src="http://via.placeholder.com/600x50"></div>
-		</div>
+		<div class="col-md-4">
 
-		<script type="text/javascript">
-			var hei = $('.left').outerHeight();
-			$('.right').css('height',hei+'px');
-		</script>
+		</div>
+	</div>
 @endsection
