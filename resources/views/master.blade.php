@@ -12,28 +12,27 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/line.css">
-
-  <link rel="stylesheet" type="text/css" href="css/animate.css">
+ 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 	<style type="text/css">
-		@font-face {
-			font-family: Gravity;
-			src: url(fonts/GeosansLight.ttf);
-		}		
-		body {
-			height: 100%;
-			max-height: 100%;
-			background-color: #ececec;
-			font-family: Gravity;
-		}
-		.content-title {
-			font-size: 200%;
-			margin-bottom: -20px;
-		}
-		.content {
-      text-align: center;
-      font-size: 150%;
-		}
+	@font-face {
+		font-family: Gravity;
+		src: url(fonts/GeosansLight.ttf);
+	}		
+	body {
+		height: 100%;
+		max-height: 100%;
+		background-color: #ececec;
+		font-family: Gravity;
+	}
+	.content-title {
+		font-size: 200%;
+		margin-bottom: -20px;
+	}
+	.content {
+  text-align: center;
+  font-size: 150%;
+	}
     .logo-big {
       max-width: 400px;
     }
@@ -53,5 +52,20 @@
 		@yield('content')
 	</div>
 
+	<script type="text/javascript">
+		//add color-bar
+		$('.barY').each(function() {
+			$(this).css({
+				'height': '5px',
+				'background-color': '#fedf5a'
+			});
+		});
+		$('.barG').each(function() {
+			$(this).css({
+				'height': '5px',
+				'background-color': '#c4e0d5'
+			});
+		});
+	</script>
 </body>
 </html>
