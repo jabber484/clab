@@ -13,19 +13,28 @@
 		text-align: center;
 	}
 	.para {
-		height: 300px;
-		background-color: #ececec;
+		height: 360px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #00b38a;
+	}
+	.intro-des {
+		font-size: 20rem;
+	}
+	.intro-icon {
+		font-size: 20rem;
 	}
 	</style>
 @endsection	
 
 @section('content')
 	<div class="para">
-		<div class="col-md-8">
-
-		</div>
-		<div class="col-md-4">
-
+		<div class="container">
+			<div class="col-md-12">
+				<span class="glyphicon glyphicon-flash intro-icon"></span>
+				<span class="intro-des">Random bullshit</span>
+			</div>
 		</div>
 	</div>
+	<div class="barY"></div>
 @endsection

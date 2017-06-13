@@ -15,7 +15,8 @@
 	right: 0;
 }
 .banner-wrapper {
-	height: 180px;
+	min-height: 180px;
+	max-height: 1000px;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
@@ -24,14 +25,22 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 0px;
-	max-width: 300px;
+	width: 30vw;
+	min-width: 300px;
+	max-width: 500px;
 }
 .login-btn {
+	background-color: #fedf5a;
 	font-size: 15px;
+	opacity: 0.8;
 	position: absolute;
 	right: 5px;
 	top: 5px;
 	width: 150px;
+}
+.login-btn:hover {
+	opacity: 1;
+	background-color: #fce999;
 }
 .school-logo {
 	left: 5px;
@@ -48,7 +57,7 @@
 		<img style="max-width:100px;" src="https://clab.wys.cuhk.edu.hk/sites/all/themes/utopia/img/CUHK_LOGO.png">
 		<img style="max-width:80px;background:white" src="https://clab.wys.cuhk.edu.hk/sites/all/themes/utopia/img/WYS_LOGO.png">
 	</div>
-	<button class="btn btn-success login-btn"><span class="glyphicon glyphicon-user"></span> <b>Login</b></button>
+	<button class="btn login-btn"><span class="glyphicon glyphicon-user"></span> <b>Login</b></button>
 	<div class="logo-bg"></div>
 	<div class="logo-big-wrapper">
 		<div><img class="logo-big animated bounceInDown" src="asset/home/logo_up.png"></div>

@@ -33,13 +33,13 @@
   text-align: center;
   font-size: 150%;
 	}
-    .logo-big {
-      max-width: 400px;
-    }
-    .logo-big-wrapper {
-      height: 100%;
-      padding: 20px;
-    }
+  .logo-big {
+    max-width: 400px;
+  }
+  .logo-big-wrapper {
+    height: 100%;
+    padding: 20px;
+  }
 	</style>
 
 	@yield('style')
