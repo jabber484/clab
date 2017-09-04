@@ -1,40 +1,93 @@
 @extends('master')
 
 @section('style')
-	<style type="text/css">
-	.corner {
-		border-bottom-left-radius: 5px;
-		border-bottom: 1px solid #c4c4c4;
-		border-left: 1px solid #c4c4c4;
-		border-right: 1px solid #d6d4d4;
-		border-top-left-radius: 8px;
-		border-top: 1px solid #c4c4c4;
-		padding: 10px; 
-		text-align: center;
-	}
-	.para {
-		height: 360px;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		background-color: #00b38a;
-	}
-	.intro-des {
-		font-size: 20rem;
-	}
-	.intro-icon {
-		font-size: 20rem;
-	}
-	</style>
+<link href="css/landing.css" rel="stylesheet">
 @endsection	
 
 @section('content')
-	<div class="para">
-		<div class="container">
-			<div class="col-md-12">
-				<span class="glyphicon glyphicon-flash intro-icon"></span>
-				<span class="intro-des">Random bullshit</span>
+{{-- @include('parts.fbpage') --}}
+
+<section class="slides">
+	<div class="container">
+		<div id="slides" class="col-xs-12">
+		    <img src="{{asset('asset/home/banner/hammer_fun.jpg')}}">
+		    <img src="{{asset('asset/home/banner/banner.jpg')}}">
+		    <img src="{{asset('asset/home/banner/banner1.jpg')}}">
+		</div>
+		<div class="col-md-12">
+			@include('parts.tools')
+		</div>
+	</div>
+</section>
+
+<section class="project">
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="landing-title">Project Showcase</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				@include('parts.project')
 			</div>
 		</div>
 	</div>
-	<div class="barY"></div>
+</section>
+
+<section class="calendar-sec">
+	<div class="container">
+		<div class="col-xs-12">
+			<div class="landing-title">Event Calendar</div>
+		</div>
+		<div class="col-xs-12 calendar">
+			<div id='calendar'></div>
+		</div>		
+	</div>
+</section>
+
+<script>
+	$(function(){
+		$("#slides").slidesjs({
+			width: 940,
+			height: 300,
+			play: {
+		      active: true,
+		      effect: "slide",
+		      interval: 8000,
+		      auto: true,
+		      swap: true,
+		      pauseOnHover: false,
+		      restartDelay: 2500
+		    },
+		    callback: {
+		      loaded: function(number) {
+		        $('.slidesjs-previous').html("<span class='glyphicon glyphicon-chevron-left'></span>");
+		        $('.slidesjs-next').html("<span class='glyphicon glyphicon-chevron-right'></span>");
+		      },
+		  	}
+		});
+
+		$('#calendar').fullCalendar({
+	        header: {
+	        	left:   'prev,next',
+			    center: '',
+			    right:  'title',
+	        },
+	        height: 520,
+	        fixedWeekCount: false,
+	        showNonCurrentDates: false
+	    });
+
+	    $('section:even').css({
+	    	"background": "#f5f5f5",
+    		"borderLeft": "8px solid #c4e1d6",
+    		"borderRight": "8px solid #c4e1d6",
+	    });
+	    $('section:odd').css({
+	    	"background": "#e2e2e2",
+    		"borderLeft": "8px solid #fee05a",
+    		"borderRight": "8px solid #fee05a",
+	    });
+
+	});
+</script>
 @endsection

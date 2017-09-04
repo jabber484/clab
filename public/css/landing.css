@@ -1,0 +1,232 @@
+.corner {
+	border-bottom-left-radius: 5px;
+	border-bottom: 1px solid #c4c4c4;
+	border-left: 1px solid #c4c4c4;
+	border-right: 1px solid #d6d4d4;
+	border-top-left-radius: 8px;
+	border-top: 1px solid #c4c4c4;
+	padding: 10px; 
+	text-align: center;
+}
+.para {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.intro-des {
+	font-size: 20rem;
+}
+.intro-icon {
+	font-size: 20rem;
+}
+.nav-btn {
+	font-size: 2rem;
+
+}
+a {
+	color: rgb(51, 51, 51);
+}
+a:hover {
+	color: rgb(200,200,200);
+}
+section>.container {
+  padding-bottom: 16px;
+}
+section:not(:first-of-type)>.container {
+  padding-top: 16px;
+}
+.landing-title {
+    color: white;
+    background-color: rgba(10, 10, 10, 0.69);
+    font-size: 22px;
+    font-variant: all-petite-caps;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+
+
+/*slide*/
+#slides {
+  display:none;
+  /*margin-bottom: 16px;*/
+}
+#slides .slidesjs-container {
+  margin-bottom:10px;
+}
+#slides .slidesjs-previous {
+  margin-right: 5px;
+  float:left;
+  margin-top: -8px;
+}
+#slides .slidesjs-next {
+  margin-right: 5px;
+  float:left;
+  margin-top: -8px;
+}
+.slidesjs-pagination {
+    margin:6px 0 0;
+    float: right;
+    list-style: none;
+}
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+.slidesjs-pagination li a {
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    float: right;
+    background-color: white;
+    color: transparent;
+    border-radius: 8px;
+    border: 1px solid #292929;
+}
+.slidesjs-pagination li a.active {
+    background-color: black;
+}
+.slidesjs-play, .slidesjs-stop {
+	display: none !important;
+}
+
+/*calendar*/
+.calendar {
+    margin-top: 8px;
+}
+button.fc-corner-right, button.fc-corner-left {
+    padding: 0 30px;
+    font-size: 12px;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+    background: black;
+    border-radius: 0 !important;
+    color: white;
+    margin-top: 4px !important;
+}
+.calendar h2{
+    font-size: 16px;
+    margin-top: 4px;
+    min-width: 160px;
+    text-align: right;
+}
+.fc-right>h2 {
+    border-right: 8px solid;
+    margin-top: 8px;
+    padding-top: 8px;
+    padding-right: 4px;
+}
+.fc-toolbar.fc-header-toolbar {
+    background: #fee05a;
+}
+
+ 
+/*big-button*/
+.big-button {
+    width: 100%;
+    margin-top: 16px;
+    background-size: cover;
+}
+.big-button-tool{
+    background-image: url("/asset/home/tool.gif");
+}
+.big-button-project{
+    background-image: url("https://media.giphy.com/media/Z7u3k6InB8i2c/giphy.gif");
+}
+.big-button-word {
+    color: white;
+    padding: 6px 15px;
+    background: rgba(56, 56, 56, 0.73);
+    text-align: center;
+}
+.big-button-word:hover {
+    animation: big-button-fade 0.5s 1 forwards;
+}
+@keyframes big-button-fade {
+    from {background: rgba(56, 56, 56, 0.73)}
+    to {background: rgba(56, 56, 56, 0.6);}
+}
+.big-button-line {
+    width: 100%;
+    height: 5px;
+    margin: 15px 0;
+    background: #ffffff;
+}
+
+
+
+/*project*/
+.project-stream {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    right: 15px;
+}
+.project-stream-word {
+    font-size: 14px;
+    font-weight: bold;
+    background: #a5e2ff;
+    padding: 4px 0;
+    margin: 0 16px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.project-link {
+    position: absolute;
+    bottom: 8px;
+    right: 32px;
+}
+.project-img {
+    background: grey;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.project-img>img {
+    width: 100%;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+.project-wrapper {
+    background: white;
+    border-bottom: 0px solid;
+    border-radius: 5px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid hsla(0, 0%, 0%, 0.35);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 8px;
+    min-height: 460px;
+    text-align: left;
+}
+.project-type {
+    margin: 8px 0 4px 3px;
+    font-size: 16px;
+}
+.project-date {
+    font-size: 14px;
+}
+.project-title {
+    border-left: 5px solid;
+    padding-left: 4px;
+    font-size: 20px;
+}
+.project-detail {
+    text-align: justify;
+}
+.project-des {
+    margin: 0 12px;
+    margin-top: 8px;
+}
+@media screen and (max-width: 768px) {
+    .project-stream{
+        top: 0;
+    }
+    .project-stream-word {
+        margin: 0 60px;
+    }
+}

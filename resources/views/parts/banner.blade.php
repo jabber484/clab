@@ -1,75 +1,69 @@
 <style type="text/css">
 .logo-big {
-	height: auto;
-	width: 100%;
+    max-width: 205px;
+    height: auto;
+    width: 100%;
+    background: #292929;
+    padding: 40px 16px;
 }
-.logo-bg {
-	position: absolute;
-	background: url('https://scontent.fhkg3-1.fna.fbcdn.net/v/t31.0-8/17622062_1245400578909106_2309705076789943737_o.jpg?oh=22d6c3639a44144ba208bc4c602bb3c0&oe=59A0BA4F');
-	background-position: center;
-	filter: blur(1px) sepia(50%);
-  	z-index: -1;  
-  	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.header{
+	background-image: url({{asset('asset/home/banner/banner.jpg')}});
+    background-repeat: no-repeat;
+    background-position: center -332px;
+    background-size: cover;
 }
-.banner-wrapper {
-	min-height: 180px;
-	max-height: 1000px;
-	overflow: hidden;
-	position: relative;
-	text-align: center;
+@media screen and (max-width: 992px) {
+	.header {
+	    background-position: center;
+	}
+	.logo-big {
+		padding-bottom: 24px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.nav-header-big a>div {
+    	margin-top: 42px !important;
+	}
 }
 .logo-big-wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0px;
-	width: 30vw;
-	min-width: 300px;
-	max-width: 500px;
-}
-.login-btn {
-	background-color: #fedf5a;
-	font-size: 15px;
-	opacity: 0.8;
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	width: 150px;
+    padding: 24px 0;
+    width: auto;
 }
 .login-btn:hover {
 	opacity: 1;
 	background-color: #fce999;
 }
 .school-logo {
+	font-size: 20px;
 	left: 5px;
 	position: absolute;
-	font-size: 20px;
 	top: 5px;
+}
+.nav-header-big a>div {
+    text-align: center;
+    padding: 2px 0 0 0 ;
+    margin-top: 75px;
+    color: white;
+    background: #292929;
+}
+.nav-header-big>a>div:hover {
+	color: #c3e0d5;
 }
 </style>
 
-<div style="height:8px;background-color: #fedf5a"></div>
-<div class="barG"></div>
-<div class="banner-wrapper">
-	<div class="school-logo">
-		<img style="max-width:100px;" src="https://clab.wys.cuhk.edu.hk/sites/all/themes/utopia/img/CUHK_LOGO.png">
-		<img style="max-width:80px;background:white" src="https://clab.wys.cuhk.edu.hk/sites/all/themes/utopia/img/WYS_LOGO.png">
+<div class="header">
+	<div class="container-fluid">
+		<div class="col-xs-7 col-sm-4 col-lg-2">
+			<img class="logo-big" src="{{asset('asset/home/logo.png')}}">
+		</div>	
+		<div class="nav-header-big col-xs-12 col-lg-9">
+			<div class="row">
+				<a href=""><div class="col-xs-3">ABOUT</div></a>
+				<a href=""><div class="col-xs-3">ITINERARY</div></a>
+				<a href=""><div class="col-xs-3">PROJECTS</div></a>
+				<a href=""><div class="col-xs-3">CONTACT</div></a>
+			</div>
+		</div>
 	</div>
-	<button class="btn login-btn"><span class="glyphicon glyphicon-user"></span> <b>Login</b></button>
-	<div class="logo-bg"></div>
-	<div class="logo-big-wrapper">
-		<div><img class="logo-big animated bounceInDown" src="asset/home/logo_up.png"></div>
-		<div><img class="logo-big animated bounceInUp" src="asset/home/logo_down.png"></div>
-	</div>
-</div>
+</div>	
 <div class="barY"></div>
-
-<script type="text/javascript">
-	$('.logo-big').click(function(event) { //logo bounce
-		$(this).removeClass('animated bounceInUp bounceInDown').addClass('animated bounce').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      	$(this).removeClass('animated bounce');
-    	});
-	});
-</script>

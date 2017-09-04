@@ -8,39 +8,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/line.css">
  	<link rel="stylesheet" type="text/css" href="css/animate.css">
+
+ 	<script src="js/jquery.slides.min.js"></script>
+
+ 	<script src='js/moment.min.js'></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+ 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+ 	<link rel="stylesheet" media="print" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css">
+ 	
+ 	{{-- font --}}
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	<style type="text/css">
 	@font-face {
 		font-family: Gravity;
 		src: url(fonts/GeosansLight.ttf);
 	}		
-	body {
-		height: 100%;
-		max-height: 100%;
-		background-color: #ececec;
-		font-family: Gravity;
+	html {
+   		height: 100%;
 	}
+	body {
+    	min-height: 100%;
+	    height: auto;
+		background-color: #f5f5f5;
+		font-family: 'Roboto', sans-serif;
+	}
+
 	.content-title {
 		font-size: 200%;
 		margin-bottom: -20px;
 	}
+
 	.content {
-  text-align: center;
-  font-size: 150%;
+   	 	text-align: center;
+	    font-size: 14px;
+	    font-weight: 100;
 	}
-  .logo-big {
-    max-width: 400px;
-  }
-  .logo-big-wrapper {
-    height: 100%;
-    padding: 20px;
-  }
-	</style>
+
+  	.barY {
+  		height: 5px;
+		background-color: #fedf5a;
+  	}
+  	</style>
 
 	@yield('style')
 </head>
@@ -52,20 +66,5 @@
 		@yield('content')
 	</div>
 
-	<script type="text/javascript">
-		//add color-bar
-		$('.barY').each(function() {
-			$(this).css({
-				'height': '5px',
-				'background-color': '#fedf5a'
-			});
-		});
-		$('.barG').each(function() {
-			$(this).css({
-				'height': '5px',
-				'background-color': '#c4e0d5'
-			});
-		});
-	</script>
-</body>
+  @include('parts.footer')
 </html>
