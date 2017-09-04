@@ -28,13 +28,14 @@ a {
 a:hover {
 	color: rgb(200,200,200);
 }
-section>.container {
+section {
   padding-bottom: 16px;
 }
-section:not(:first-of-type)>.container {
+section:not(:first-of-type) {
   padding-top: 16px;
 }
 .landing-title {
+    margin-bottom: 8px;
     color: white;
     background-color: rgba(10, 10, 10, 0.69);
     font-size: 22px;
@@ -91,7 +92,6 @@ section:not(:first-of-type)>.container {
 
 /*calendar*/
 .calendar {
-    margin-top: 8px;
 }
 button.fc-corner-right, button.fc-corner-left {
     padding: 0 30px;
@@ -222,11 +222,14 @@ button.fc-corner-right, button.fc-corner-left {
     margin: 0 12px;
     margin-top: 8px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .project-stream{
         top: 0;
     }
     .project-stream-word {
-        margin: 0 60px;
+        margin: 0 30px;
+    }
+    .nav-header-big a>div, .big-button-word {
+        font-size: 12px;
     }
 }
