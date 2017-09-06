@@ -23,7 +23,7 @@
 <section class="project">
 	<div class="container">
 		<div class="col-xs-12">
-			<div class="landing-title">Project Showcase</div>
+			<div class="content-title">Project Showcase</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
@@ -36,7 +36,7 @@
 <section class="calendar-sec">
 	<div class="container">
 		<div class="col-xs-12">
-			<div class="landing-title">Event Calendar</div>
+			<div class="content-title">Event Calendar</div>
 		</div>
 		<div class="col-xs-12 calendar">
 			<div id='calendar'></div>

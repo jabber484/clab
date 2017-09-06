@@ -115,6 +115,7 @@ button.fc-corner-right, button.fc-corner-left {
     margin-top: 8px;
     padding-top: 8px;
     padding-right: 4px;
+    padding-bottom: 2px;
 }
 .fc-toolbar.fc-header-toolbar {
     background: #fee05a;

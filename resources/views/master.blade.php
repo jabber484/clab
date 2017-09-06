@@ -40,8 +40,16 @@
 	}
 
 	.content-title {
-		font-size: 200%;
-		margin-bottom: -20px;
+	    background: #fedf5a;
+	    border-left: 8px solid;
+	    font-size: 26px;
+	    font-weight: bold;
+	    padding-bottom: 8px;
+	    padding-left: 8px;
+	    padding-top: 8px;
+	    text-align: left;
+	    font-variant: all-small-caps;
+	    margin-bottom: 8px;
 	}
 
 	.content {
