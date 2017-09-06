@@ -6,8 +6,8 @@
 	    <div class="project-des">
 		    <div class="project-title">I Want To Kill Your Mum</div>
 		    <div class="project-date">12 Sept ~ 14 Sept</div>
-		    <div class="project-detail">How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. </div>
-		    <div class="project-link">Detail</div>
+		    <div class="project-<a href="">Detail</a>">How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. </div>
+		    <div class="project-link"><a href="">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
@@ -22,8 +22,8 @@
 	    <div class="project-des">
 		    <div class="project-title">I Want To Kill Your Mum</div>
 		    <div class="project-date">12 Sept ~ 14 Sept</div>
-		    <div class="project-detail">sdfsdfsfsfsdf</div>
-		    <div class="project-link">Detail</div>
+		    <div class="project-<a href="">Detail</a>">sdfsdfsfsfsdf</div>
+		    <div class="project-link"><a href="">Detail</a></div>
 	    </div>
 	</div>
 	<div class="project-stream">
@@ -38,8 +38,8 @@
 	    <div class="project-des">
 		    <div class="project-title">I Want To Kill Your Mum</div>
 		    <div class="project-date">12 Sept ~ 14 Sept</div>
-		    <div class="project-detail">sdfsdfsfsfsdf</div>
-		    <div class="project-link">Detail</div>
+		    <div class="project-<a href="">Detail</a>">sdfsdfsfsfsdf</div>
+		    <div class="project-link"><a href="">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
@@ -54,8 +54,8 @@
 	    <div class="project-des">
 		    <div class="project-title">I Want To Kill Your Mum</div>
 		    <div class="project-date">12 Sept ~ 14 Sept</div>
-		    <div class="project-detail">sdfsdfsfsfsdf</div>
-		    <div class="project-link">Detail</div>
+		    <div class="project-<a href="">Detail</a>">sdfsdfsfsfsdf</div>
+		    <div class="project-link"><a href="">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">

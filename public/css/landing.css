@@ -167,7 +167,7 @@ button.fc-corner-right, button.fc-corner-left {
     font-weight: bold;
     background: #a5e2ff;
     padding: 4px 0;
-    margin: 0 16px;
+    margin: 0 24px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -228,8 +228,5 @@ button.fc-corner-right, button.fc-corner-left {
     }
     .project-stream-word {
         margin: 0 30px;
-    }
-    .nav-header-big a>div, .big-button-word {
-        font-size: 12px;
     }
 }

@@ -3,8 +3,8 @@
     max-width: 205px;
     height: auto;
     width: 100%;
-    background: #292929;
-    padding: 40px 16px;
+    background: #3c515d;
+    padding: 36px 16px;
 }
 .header{
 	background-image: url({{asset('asset/home/banner/banner.jpg')}});
@@ -25,6 +25,11 @@
     	margin-top: 42px !important;
 	}
 }
+@media screen and (max-width: 767px) {
+    .nav-header-big a>div, .big-button-word {
+        font-size: 12px;
+    }
+}
 .logo-big-wrapper {
     padding: 24px 0;
     width: auto;
@@ -44,7 +49,7 @@
     padding: 2px 0 0 0 ;
     margin-top: 75px;
     color: white;
-    background: #292929;
+    background: #3c515d;
 }
 .nav-header-big>a>div:hover {
 	color: #c3e0d5;
@@ -54,12 +59,12 @@
 <div class="header">
 	<div class="container-fluid">
 		<div class="col-xs-7 col-sm-4 col-lg-2">
-			<img class="logo-big" src="{{asset('asset/home/logo.png')}}">
+			<a href="/"><img class="logo-big" src="{{asset('asset/clablogo.svg')}}"></a>
 		</div>	
 		<div class="nav-header-big col-xs-12 col-lg-9">
 			<div class="row">
 				<a href=""><div class="col-xs-3">ABOUT</div></a>
-				<a href=""><div class="col-xs-3">ITINERARY</div></a>
+				<a href="/catalog"><div class="col-xs-3">CATALOG</div></a>
 				<a href=""><div class="col-xs-3">PROJECTS</div></a>
 				<a href=""><div class="col-xs-3">CONTACT</div></a>
 			</div>
