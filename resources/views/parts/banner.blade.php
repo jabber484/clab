@@ -72,3 +72,15 @@
 	</div>
 </div>	
 <div class="barY"></div>
+
+<script>
+	$(function(){
+	    $('.nav-header-big a>div:even').css({
+	    	"background": "rgba(255, 224, 92, 0.8)",
+	    });
+	    $('.nav-header-big a>div:odd').css({
+	    	"background": "rgba(197, 224, 215, 0.8)",
+	    });
+
+	});
+</script>

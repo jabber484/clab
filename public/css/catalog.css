@@ -1,21 +1,24 @@
 .item-img {
     text-align: right;
+    float: right;
 }
 .item-img>img {
 	width: 100%;
 }
 .item {
+    background: white;
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    height: 152px;
     margin-bottom: 8px;
     margin-top: 8px;
     width: 100%;
 }
 .item-des {
+    width: 220px;
 	padding: 16px;
     text-align: left;
-    float: left;
 }
 .item-title {
     font-size: large;
@@ -28,7 +31,9 @@
     bottom: 24px;
     left: 32px;
 }
-
+.item-subtitle {
+    font-size: 12px;
+}
 
 .catalog-subtitle {
     font-size: 18px;
@@ -37,7 +42,6 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0.35);
 }
 
-
 hr {
     margin-top: 0;
     margin-bottom: 0;
@@ -45,4 +49,9 @@ hr {
 
 section {
 	margin-top: 8px;
+}
+@media screen and (max-width: 320px) {
+    .item-des {
+        min-width: 100%;
+    }
 }

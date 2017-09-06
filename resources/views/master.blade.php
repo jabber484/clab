@@ -40,7 +40,7 @@
 	}
 
 	.content-title {
-	    background: #fedf5a;
+	    background: rgba(254, 223, 90, 0.7);
 	    border-left: 8px solid;
 	    font-size: 26px;
 	    font-weight: bold;

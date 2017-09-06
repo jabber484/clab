@@ -15,7 +15,5 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('catalog', function () {
-    return view('catalog');
-});
+Route::get('catalog', 'CatalogController@getCatalog');
 
