@@ -7,7 +7,6 @@
 	}
 	.footer-clab {
 		padding: 8px 0;
-		float: left;
 	}
 	.credit{
 		float: right;

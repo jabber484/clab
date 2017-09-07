@@ -26,8 +26,8 @@
 
 	<style type="text/css">
 	@font-face {
-		font-family: Gravity;
-		src: url(fonts/GeosansLight.ttf);
+		font-family: wys;
+		src: url('asset/calvert.ttf');
 	}		
 	html {
    		height: 100%;
@@ -36,7 +36,7 @@
     	min-height: 100%;
 	    height: auto;
 		background-color: #f5f5f5;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'wys';
 	}
 
 	.content-title {
