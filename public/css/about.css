@@ -1,0 +1,12 @@
+.about-content {
+	text-align: justify;
+	margin-bottom: 16px;
+}
+.about-content>div {
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+section {
+    margin-top: 8px;
+}

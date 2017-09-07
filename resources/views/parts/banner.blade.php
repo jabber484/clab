@@ -45,6 +45,7 @@
 	top: 5px;
 }
 .nav-header-big a>div {
+	font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 2px 0 0 0 ;
     margin-top: 75px;
@@ -63,10 +64,10 @@
 		</div>	
 		<div class="nav-header-big col-xs-12 col-lg-9">
 			<div class="row">
-				<a href=""><div class="col-xs-3">ABOUT</div></a>
-				<a href="/catalog"><div class="col-xs-3">CATALOG</div></a>
+				<a href="/about"><div class="col-xs-3">ABOUT</div></a>
+				<a href="/catalogue"><div class="col-xs-3">CATALOG</div></a>
 				<a href=""><div class="col-xs-3">PROJECTS</div></a>
-				<a href=""><div class="col-xs-3">CONTACT</div></a>
+				<a href="/contact"><div class="col-xs-3">CONTACT</div></a>
 			</div>
 		</div>
 	</div>

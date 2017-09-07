@@ -135,6 +135,7 @@ button.fc-corner-right, button.fc-corner-left {
     background-image: url("https://media.giphy.com/media/Z7u3k6InB8i2c/giphy.gif");
 }
 .big-button-word {
+    font-family: 'Roboto', sans-serif;
     color: white;
     padding: 6px 15px;
     background: rgba(56, 56, 56, 0.73);

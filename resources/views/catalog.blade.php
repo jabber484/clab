@@ -8,7 +8,7 @@
 <section class="catalog">
 	<div class="container">
 		<div class="content-title">
-			Catalog
+			Catalogue
 		</div>
 		@foreach($payload as $type => $records)
 		<div class="col-xs-12">
@@ -20,13 +20,13 @@
 				<div class="col-xs-12 col-sm-6 col-lg-4">
 					<div class="item">
 						<div class="item-img">	
-							<img src="http://via.placeholder.com/120x150">
+							<img src="{{asset('asset/catalogue/'.$record['id'].'.jpg')}}">
 						</div>	
 						<div class="item-des">
 							<div class="item-title">{{$record['name']}}</div>
 							<div class="item-subtitle">{{$record['description']}}</div>
 						</div>
-						<div class="item-book"><a href="">Book this</a></div>
+						<div class="item-book"><a href="/book?item={{$record['id']}}">Book this</a></div>
 					</div>
 				</div>
 				@endforeach
