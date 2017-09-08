@@ -3,7 +3,7 @@
     max-width: 205px;
     height: auto;
     width: 100%;
-    background: #3c515d;
+    background: rgba(117, 117, 117, 0.75);
     padding: 36px 16px;
 }
 .header{
@@ -45,11 +45,12 @@
 	top: 5px;
 }
 .nav-header-big a>div {
-	font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
-    padding: 2px 0 0 0 ;
+    padding: 2px 0 0 0;
     margin-top: 75px;
-    color: white;
+    color: #f9fffd;
+    text-shadow: 0px 1px 2px rgba(87, 87, 87, 0.6);
     background: #3c515d;
 }
 .nav-header-big>a>div:hover {
@@ -65,7 +66,7 @@
 		<div class="nav-header-big col-xs-12 col-lg-9">
 			<div class="row">
 				<a href="/about"><div class="col-xs-3">ABOUT</div></a>
-				<a href="/catalogue"><div class="col-xs-3">CATALOG</div></a>
+				<a href="/catalogue"><div class="col-xs-3">CATALOGUE</div></a>
 				<a href=""><div class="col-xs-3">PROJECTS</div></a>
 				<a href="/contact"><div class="col-xs-3">CONTACT</div></a>
 			</div>
