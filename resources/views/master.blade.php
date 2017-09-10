@@ -38,7 +38,9 @@
 		background-color: #f5f5f5;
 		font-family: 'wys';
 	}
-
+	section {
+	    margin-top: 8px;
+	}
 	.content-title {
 	    background: rgba(254, 223, 90, 0.7);
 	    border-left: 8px solid;

@@ -13,6 +13,6 @@ class CatalogController extends Controller
 
     	$payload = $catalog->getAll();
 
-    	return view('catalog',compact('payload'));
+    	return view('catalog')->with('payload',$payload);
     }
 }

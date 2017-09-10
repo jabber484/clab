@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', 'PageController@landing');
 
 Route::get('catalogue', 'CatalogController@getCatalog');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'PageController@about');
 
-Route::get('/contact', function () {
-    return view('about');
-});
+Route::get('/contact', 'PageController@contact');
+
+Route::get('/guideline', 'PageController@guideline');
+
+Route::get('/project', 'PageController@project');
