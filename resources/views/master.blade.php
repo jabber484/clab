@@ -40,7 +40,6 @@
 		font-family: 'wys';
 	}
 	section {
-		min-height: 800px;
 	    margin-top: 8px;
 	}
 	.content-title {
@@ -57,6 +56,7 @@
 	}
 
 	.content {
+		min-height: 800px;
    	 	text-align: center;
 	    font-size: 14px;
 	    font-weight: 100;
