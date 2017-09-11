@@ -72,6 +72,11 @@
 			min-height: 600px
 		}
 	}
+	@media screen and (max-width: 480px) {
+	    section {
+			min-height: 0px
+		}
+	}
   	</style>
 
 	@yield('style')
