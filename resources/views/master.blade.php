@@ -40,6 +40,7 @@
 		font-family: 'wys';
 	}
 	section {
+		min-height: 800px
 	    margin-top: 8px;
 	}
 	.content-title {
@@ -65,6 +66,12 @@
   		height: 5px;
 		background-color: #fedf5a;
   	}
+
+  	@media screen and (max-width: 767px) {
+	    section {
+			min-height: 600px
+		}
+	}
   	</style>
 
 	@yield('style')
