@@ -88,6 +88,13 @@
     		"borderRight": "8px solid #fee05a",
 	    });
 
+	    $(".project-detail").dotdotdot({
+			ellipsis	: '... ',
+			wrap		: 'word',
+			fallbackToLetter: true,
+			watch: "window"
+	    });
+
 	});
 </script>
 @endsection

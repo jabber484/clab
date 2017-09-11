@@ -15,6 +15,7 @@
  	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
  	<script src="js/jquery.slides.min.js"></script>
+ 	<script src="js/jquery.dotdotdot.js"></script>
 
  	<script src='js/moment.min.js'></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>

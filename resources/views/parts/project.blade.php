@@ -7,7 +7,7 @@
 		    <div class="project-title">I Want To Kill Your Mum</div>
 		    <div class="project-date">12 Sept ~ 14 Sept</div>
 		    <div class="project-detail">
-		    	How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. 
+		    	How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. How does the implicit hog flip? How does the librarian conduct a crop? The buss discontinues the synonym. 
 		    </div>
 		    <div class="project-link"><a href="">Detail</a></div>
 		</div>

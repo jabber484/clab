@@ -28,6 +28,9 @@ a {
 a:hover {
 	color: rgb(200,200,200);
 }
+section:first-child {
+  margin-top: 0;
+}
 section {
   padding-bottom: 16px;
 }
@@ -219,6 +222,7 @@ button.fc-corner-right, button.fc-corner-left {
 }
 .project-detail {
     text-align: justify;
+    height: 160px;
 }
 .project-des {
     margin: 0 12px;
