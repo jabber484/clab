@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link href={{asset("css/bootstrap.min.css")}} rel="stylesheet">
+	<script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")}}></script>
+	<script src={{asset("js/bootstrap.min.js")}}></script>
 
-	<link rel="stylesheet" type="text/css" href="css/line.css">
- 	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href={{asset("css/line.css")}}>
+ 	<link rel="stylesheet" type="text/css" href={{asset("css/animate.css")}}>
 
- 	<script src="js/jquery.slides.min.js"></script>
- 	<script src="js/jquery.dotdotdot.js"></script>
+ 	<script src={{asset("js/jquery.slides.min.js")}}></script>
+ 	<script src={{asset("js/jquery.dotdotdot.js")}}></script>
 
- 	<script src='js/moment.min.js'></script>
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
- 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
- 	<link rel="stylesheet" media="print" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css">
+ 	<script src={{asset('js/moment.min.js')}}></script>
+ 	<script src={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js")}}></script>
+ 	<link rel="stylesheet" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css")}}>
+ 	<link rel="stylesheet" media="print" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css")}}>
  	
  	{{-- font --}}
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -28,7 +28,7 @@
 	<style type="text/css">
 	@font-face {
 		font-family: wys;
-		src: url('asset/calvert.ttf');
+		src: url('{{asset("asset/calvert.ttf")}}');
 	}		
 	html {
    		height: 100%;

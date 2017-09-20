@@ -19,8 +19,10 @@ class Project extends Migration
             $table->string('name');
             $table->text('short_des');
             $table->text('description');
-            $table->date('fromDate');
-            $table->date('toDate');
+            $table->string('picture')->nullable();
+            $table->boolean('isIdea');
+            $table->date('fromDate')->nullable();
+            $table->date('toDate')->nullable();
         });
     }
 

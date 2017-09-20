@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\catalog;
+use App\project;
 
 class PageController extends Controller
 {	
@@ -28,8 +29,14 @@ class PageController extends Controller
     	return view('guideline');
     }
 
-    public function project(){
-        
-        return view('project');
+    public function project($id = 'all'){
+        if($id == 'all'){
+            return view('project');
+        } else {
+            $project = new project();
+            $data = $project->getById($id);
+
+            return view('projectDetail',compact('data'));
+        }
     }
 }

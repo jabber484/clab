@@ -12,7 +12,7 @@
 		    	<p>So I checked here that PP plastic can be reused without safety hazards.<br><a href="http://learn.eartheasy.com/2012/05/plastics-by-the-numbers/">http://learn.eartheasy.com/2012/05/plastics-by-the-numbers/</a></p>
 				<p>Can we set up a PP plastic collection corner and work with how we can reuse the PP plastic?&nbsp;</p>
 		    </div>
-		    <div class="project-link"><a href="">Detail</a></div>
+		    <div class="project-link"><a href="/project/1">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
@@ -32,7 +32,7 @@
 		    <div class="project-detail">
 		    	<p>I want to create an online platform for CUHK students to meet others who have the same niche hobbies and interests as them. Interested parties please contact me by email.</p>
 		    </div>
-		    <div class="project-link"><a href="">Detail</a></div>
+		    <div class="project-link"><a href="/project/2">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
@@ -52,7 +52,7 @@
 		    <div class="project-detail">
 		    	<p>故事圍繞於數名英國年輕人身上，不喜歡就業、整天無所事事，把妞、鬧事和吸毒成了他們每天的生活；儘管曾試圖擺脫毒品，但仍受不了誘惑地在打上一針，但隨著歲月逝去，他們也因此對自己的選擇付出代價。(Wikipedia)</p>
 		    </div>
-		    <div class="project-link"><a href="">Detail</a></div>
+		    <div class="project-link"><a href="/project/3">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
@@ -73,7 +73,7 @@
 		    <div class="project-detail">
 		    	<p>Creativity Laboratory (c!ab) is organizing a company visit with the School of Journalism and Communication to VS Media, one of the leading companies in the new digital industry. It aims to serve as a company to develop “We Media” business by providing professional support to empower content creators to produce high-quality videos and help them become social media influencer. VS Media now stands at over 500 creator partners in Greater China, with over 45 million subscribers online.</p>
 		    </div>
-		    <div class="project-link"><a href="">Detail</a></div>
+		    <div class="project-link"><a href="/project/4">Detail</a></div>
 		</div>
 	</div>
 	<div class="project-stream">
