@@ -7,9 +7,9 @@
     padding: 36px 16px;
 }
 .header{
-	background-image: url({{asset('asset/home/banner/banner.jpg')}});
+	background-image: url({{asset('asset/home/home.jpg')}});
     background-repeat: no-repeat;
-    background-position: center -332px;
+    background-position: center -438px;
     background-size: cover;
 }
 @media screen and (max-width: 992px) {

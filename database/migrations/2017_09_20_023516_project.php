@@ -17,7 +17,10 @@ class Project extends Migration
             $table->increments('id')->unique();
             $table->enum('type',['Art and Culture', "Design Thinking", "Entrepreneurship and Management", "Science and Technology", "Sociopolitical Issues"]);
             $table->string('name');
+            $table->text('short_des');
             $table->text('description');
+            $table->date('fromDate');
+            $table->date('toDate');
         });
     }
 
@@ -28,6 +31,6 @@ class Project extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogs');
+        Schema::dropIfExists('projects');
     }
 }

@@ -15,7 +15,7 @@ class Catalog extends Migration
     {
         Schema::create('catalogs', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->enum('type',['Mobile Suit', "Weapon"]);
+            $table->enum('type',['Drills', "Sharps","Machine"]);
             $table->string('name');
             $table->text('description');
         });

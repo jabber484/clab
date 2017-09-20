@@ -94,6 +94,13 @@
 			fallbackToLetter: true,
 			watch: "window"
 	    });
+	    $(".project-title-word").dotdotdot({
+			ellipsis	: '... ',
+			wrap		: 'word',
+			fallbackToLetter: true,
+			watch: "window"
+	    });
+
 
 	});
 </script>

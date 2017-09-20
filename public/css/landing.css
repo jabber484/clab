@@ -22,16 +22,14 @@
 	font-size: 2rem;
 
 }
-a {
+/* a {
 	color: rgb(51, 51, 51);
-}
+} */
 a:hover {
 	color: rgb(200,200,200);
 }
-section:first-child {
-  margin-top: 0;
-}
 section {
+  margin-top: 0;
   padding-bottom: 16px;
 }
 section:not(:first-of-type) {
@@ -135,7 +133,7 @@ button.fc-corner-right, button.fc-corner-left {
     background-image: url("/asset/home/tool.gif");
 }
 .big-button-project{
-    background-image: url("https://media.giphy.com/media/Z7u3k6InB8i2c/giphy.gif");
+    background-image: url("https://media.giphy.com/media/bIoHUGOzzdrzO/giphy.gif");
 }
 .big-button-word {
     font-family: 'Roboto', sans-serif;
@@ -168,6 +166,7 @@ button.fc-corner-right, button.fc-corner-left {
     right: 15px;
 }
 .project-stream-word {
+    /* color: white; */
     font-size: 14px;
     font-weight: bold;
     background: #a5e2ff;
@@ -205,7 +204,7 @@ button.fc-corner-right, button.fc-corner-left {
     border: 1px solid hsla(0, 0%, 0%, 0.35);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     margin-top: 8px;
-    min-height: 460px;
+    min-height: 480px;
     text-align: left;
 }
 .project-type {
@@ -215,7 +214,11 @@ button.fc-corner-right, button.fc-corner-left {
 .project-date {
     font-size: 14px;
 }
+.project-title-word {
+    max-height: 30px;
+}
 .project-title {
+    padding: 8px 0;
     border-left: 5px solid;
     padding-left: 4px;
     font-size: 18px;
@@ -235,4 +238,20 @@ button.fc-corner-right, button.fc-corner-left {
     .project-stream-word {
         margin: 0 30px;
     }
+}
+
+.project-stream-word.stream-1 { //Art
+    background-color: #FF776B;
+}
+.project-stream-word.stream-2 { //Design
+    background-color: #FFB745;
+}
+.project-stream-word.stream-3 {
+    background-color: #CA5DFF;
+}
+.project-stream-word.stream-4 {
+    background-color: #185EE8;
+}
+.project-stream-word.stream-5 {
+    background-color: #47F2B7;
 }

@@ -13,9 +13,9 @@
 		<div class="col-md-12">
 			<div class="project-item panel-group">
 				<div class="panel panel-default" id="project-1">
-					<div class="panel-heading">Science & Technology</div>
+					<div class="panel-heading">Science and Technology</div>
 			    	<div class="panel-body">
-					    <div class="project-title">I Want To Kill Your Mum</div>
+					    <div class="project-title">It is Fun</div>
 					    <div class="project-date">12 Sept ~ 14 Sept</div>
 			    		<div class="project-img">
 							<img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t31.0-8/15002269_1331852580158450_7900758843559021126_o.jpg?oh=d992a682ebd8e757eba8c07b64f043fb&oe=5A5043EF">
