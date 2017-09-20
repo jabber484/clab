@@ -240,18 +240,18 @@ button.fc-corner-right, button.fc-corner-left {
     }
 }
 
-.project-stream-word.stream-1 { //Art
+.stream-1 { /* Art */
     background-color: #FF776B;
 }
-.project-stream-word.stream-2 { //Design
+.stream-2 { /* Design */
     background-color: #FFB745;
 }
-.project-stream-word.stream-3 {
+.stream-3 { /* Entrepreneurship-and-Management */
     background-color: #CA5DFF;
 }
-.project-stream-word.stream-4 {
+.stream-4 { /* Sci-and-Tech */
     background-color: #185EE8;
 }
-.project-stream-word.stream-5 {
+.stream-5 { /* Sociopolitical */
     background-color: #47F2B7;
 }
