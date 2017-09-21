@@ -9,7 +9,7 @@
 .header{
 	background-image: url({{asset('asset/home/home.jpg')}});
     background-repeat: no-repeat;
-    background-position: center -438px;
+    background-position: center;
     background-size: cover;
 }
 @media screen and (max-width: 992px) {

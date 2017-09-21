@@ -34,6 +34,7 @@
    		height: 100%;
 	}
 	body {
+		position: relative;
     	min-height: 100%;
 	    height: auto;
 		background-color: #f5f5f5;
@@ -56,7 +57,7 @@
 	}
 
 	.content {
-		min-height: 800px;
+		min-height: 80vh;
    	 	text-align: center;
 	    font-size: 14px;
 	    font-weight: 100;
