@@ -1,0 +1,119 @@
+@extends('master')
+
+@section('style')
+<link href="{{asset("css/catalog.css")}}" rel="stylesheet">
+<link href="{{asset("css/form.css")}}" rel="stylesheet">
+@endsection	
+	
+@section('content')
+<section class="project">
+	<div class="container">
+		<div class="content-title">
+			New Booking
+		</div>
+
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="field">
+						<div class="subtitle">Shopping Cart</div>
+						<div class="cart-wrapper">
+							<div class="cart-empty">No Item</div>
+
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="subtitle">Duration</div>
+						<div class="duration-wrapper field">
+							<div class="col-xs-12 col-sm-6">
+								{{-- From --}}
+								<div class="subtitle">From</div>
+								<div class="field">
+									<select id="fYear">
+										@for ($i = 2016; $i <= 2047; $i++)
+										<option value="{{$i}}">{{$i}}</option>
+										@endfor
+									</select>
+									<select id="fMonth">
+										@for ($i = 1; $i <= 12; $i++)
+										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										@endfor
+									</select>
+									<select id="fDay">
+										@for ($i = 1; $i <= 31; $i++)
+										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										@endfor
+									</select>
+								</div>
+							</div>
+							
+							<div class="col-xs-12 col-sm-6">
+								{{-- To --}}
+								<div class="subtitle">To</div>
+								<div class="field">
+									<select id="tYear">
+										@for ($i = 2016; $i <= 2047; $i++)
+										<option value="{{$i}}">{{$i}}</option>
+										@endfor
+									</select>
+									<select id="tMonth">
+										@for ($i = 1; $i <= 12; $i++)
+										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										@endfor
+									</select>
+									<select id="tDay">
+										@for ($i = 1; $i <= 31; $i++)
+										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										@endfor
+									</select>
+								</div>
+							</div>							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="field">
+						<div class="subtitle">Catalog</div>
+						<div class="catalog-wrapper">
+						@include("parts.catalogShowcase")
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="field submit-btn">
+				<button class="btn btn-success">Submit</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<script>
+// $('.submit-btn').click(function(){
+
+// 	$.post("/project/new/post" ,
+// 		{ title : $('#cat').val(),
+// 		  cat : $('#cat').val(), 
+// 		  Idea: $('#idea').html() == 1 ? 1 : 0,
+// 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
+// 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
+// 		  short : $('textarea2').froalaEditor('html.get'), 
+// 		  full : $('textarea').froalaEditor('html.get'), 
+// 		  alias : $('#alias').val(),
+// 		  contact : $('#contact').val(),
+// 	})
+// 	.fail(function(xhr, ajaxOptions, thrownError) {
+// 	    console.log(xhr.responseText);
+// 	    console.log(thrownError);
+// 	    console.log('Ajax Error');
+// 	}).done(function(xhr, ajaxOptions, thrownError) {
+// 		window.location.replace("/project/"+xhr);
+// 	});
+
+// });
+
+</script>
+@endsection

@@ -35,11 +35,26 @@ class PageController extends Controller
     	return view('guideline');
     }
 
-    public function newproject(){
+    public function newProject(){
         $event = new event_type();
         $type = $event->getAll();
 
         return view('CMS.NewProject',compact('type'));
+    }
+
+    public function newBooking(){
+        $catalog = new catalog();
+        $catalog_type = new catalog_type();
+
+        $type = $catalog_type->getAll();
+        $payload = $catalog->getAll();
+
+        foreach ($payload as $key => $entries) {
+            $payload[$type[$key][0]['name']] = $payload[$key];
+            unset($payload[$key]);
+        }
+
+        return view('CMS.NewBooking')->with('payload',$payload)->with('onBooking',1);
     }
 
     public function getCatalog(){
@@ -54,7 +69,7 @@ class PageController extends Controller
             unset($payload[$key]);
         }
 
-        return view('catalog')->with('payload',$payload);
+        return view('catalog')->with('payload',$payload)->with('onBooking',0);
     }
 
     public function project($id = 'all'){

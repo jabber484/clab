@@ -14,3 +14,12 @@
 	text-align: center;
 	margin-top: 16px; 
 }
+
+
+.cart-wrapper {
+	min-height: 200px;
+}
+.catalog-wrapper{
+	overflow: auto;
+    max-height: 650px;
+}

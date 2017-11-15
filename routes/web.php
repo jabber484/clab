@@ -26,5 +26,4 @@ Route::post('/project/new/post', 'ProjectController@newProject');
 Route::get('/project/{id}', 'PageController@project');
 Route::get('/project', 'PageController@project');
 
-
-Route::get('/test', 'ProjectController@getLatest');
+Route::get('/booking/new', 'PageController@newBooking');

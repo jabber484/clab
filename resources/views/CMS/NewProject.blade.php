@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-<link href={{asset("css/NewProject.css")}} rel="stylesheet">
+<link href={{asset("css/form.css")}} rel="stylesheet">
 @endsection	
 	
 @section('content')
@@ -80,7 +80,8 @@
 						</select>
 					</div>
 				</div>
-
+			</div>
+			
 			{{-- Content --}}
 			<div class="subtitle">Short Description</div>
 			<div class="field">
@@ -123,7 +124,7 @@
 
 <script>
 $('textarea').froalaEditor({
-		height: 400
+		height: 300
 });
 $('textarea2').froalaEditor({
 		height: 100
