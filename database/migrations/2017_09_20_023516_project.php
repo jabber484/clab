@@ -15,7 +15,7 @@ class Project extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->enum('type',['Art and Culture', "Design Thinking", "Entrepreneurship and Management", "Science and Technology", "Sociopolitical Issues"]);
+            $table->integer('type');
             $table->string('name');
             $table->text('short_des');
             $table->text('description');
@@ -23,6 +23,9 @@ class Project extends Migration
             $table->boolean('isIdea');
             $table->date('fromDate')->nullable();
             $table->date('toDate')->nullable();
+            $table->text('alias');
+            $table->text('contact');
+            $table->timestamps();
         });
     }
 

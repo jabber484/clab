@@ -10,8 +10,9 @@
 		<div class="content-title">
 			Projects
 		</div>
-		
-		@include("parts.project")
+		<div class="col-xs-12">
+			@include("parts.projectShowcase")
+		</div>
 	</div>
 </section>
 

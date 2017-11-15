@@ -3,21 +3,47 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\event_type;
 
 class project extends Model
 {
     public function getById($id){
-    	$type = array(
-    		'Art and Culture' => 1,
-    		'Design Thinking' => 2,
-    		'Entrepreneurship and Management' => 3,
-    		'Science and Technology' => 4,
-    		'Sociopolitical Issues' => 5
-    	);
+        $event = new event_type();
 
-    	$data = $this->where('id',$id)->first();
-    	$data->streamNum = $type[$data['type']];
+    	$type = $event->getAll();
+    	$data = $this->where('id',$id)->first()->toArray();
 
+    	$data['streamNum'] = $data['type'];
+        $data['type'] = $type[$data['streamNum']][0]['name'];
+
+    	return $data;
+    }
+
+    public function getLatest($number){
+        $event = new event_type();
+
+    	$type = $event->getAll();
+    	$data = $this->all()->reverse()->take($number)->toArray();
+
+    	foreach ($data as $key => $value) {
+			$data[$key]['streamNum'] = $value['type'];
+			$data[$key]['type'] = $type[$data[$key]['streamNum']][0]['name'];
+    	}
+    
+    	return $data;
+    }
+
+    public function getAll(){
+        $event = new event_type();
+
+    	$type = $event->getAll();
+    	$data = $this->all()->reverse()->toArray();
+
+    	foreach ($data as $key => $value) {
+			$data[$key]['streamNum'] = $value['type'];
+			$data[$key]['type'] = $type[$data[$key]['streamNum']][0]['name'];
+    	}
+    
     	return $data;
     }
 }

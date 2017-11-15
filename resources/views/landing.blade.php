@@ -27,7 +27,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				@include('parts.project')
+				@include('parts.projectShowcase')
 			</div>
 		</div>
 	</div>

@@ -11,18 +11,26 @@
 			Projects
 		</div>
 		<div class="col-md-12">
-			<div class="project-title">{{$data['name']}}</div>
-		    <div class="project-date">
-	    	@if($data['isIdea'] == 1)
-	    		{{"Idea"}}
-	    	@endif	
+			<div class="row">
+
+			    <div class="col-md-6 project-detail" id="project-{{$data["id"]}}">
+			    	<div class="project-title">{{$data['name']}}</div>
+				    <div class="project-date">
+			    	@if($data['isIdea'] == 1)
+			    		{{"Idea"}}
+			    	@endif	
+			    	<div>{{$data['type']}}</div>
+				    </div>
+
+			    	
+			    	{!!$data['description']!!}
+			    </div>
+		   		<div class="col-md-6 project-img">
+					<img src={{$data['picture']}}>
+			    </div>
 		    </div>
-		    <div class="project-detail" id="project-{{$data["id"]}}">
-		    	{!!$data['description']!!}
-		    </div>
-    		<div class="project-img">
-				<img src={{$data['picture']}}>
-		    </div>
+		    
+    		
 		</div>
 	</div>
 </section>

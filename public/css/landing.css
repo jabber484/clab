@@ -238,6 +238,9 @@ button.fc-corner-right, button.fc-corner-left {
     .project-stream-word {
         margin: 0 30px;
     }
+    section {
+        min-height: 0;
+    }
 }
 
 .stream-1 { /* Art */

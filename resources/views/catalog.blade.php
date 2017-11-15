@@ -51,7 +51,7 @@
 
 <script>
 var data = JSON.parse('{!!json_encode($payload)!!}');
-console.log(data);
+// console.log(data);
 
 function hideAllItems(){
 	$(".item-wrapper").css("display","none");

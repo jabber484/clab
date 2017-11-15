@@ -6,10 +6,22 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<link href={{asset("css/bootstrap.min.css")}} rel="stylesheet">
 	<script src={{asset("https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")}}></script>
 	<script src={{asset("js/bootstrap.min.js")}}></script>
+	
+	<!-- Include external CSS. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+ 
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+	 
+	<!-- Include JS file. -->
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.min.js'></script>
 
 	<link rel="stylesheet" type="text/css" href={{asset("css/line.css")}}>
  	<link rel="stylesheet" type="text/css" href={{asset("css/animate.css")}}>
@@ -92,3 +104,11 @@
 
   @include('parts.footer')
 </html>
+
+<script type="text/javascript">
+	$.ajaxSetup({
+	    headers: {
+	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	    }
+	});
+</script>

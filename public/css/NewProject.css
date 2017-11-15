@@ -1,0 +1,16 @@
+.content {
+	text-align: left;
+}
+.subtitle {
+    font-size: 18px;
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+}
+.field {
+	margin: 8px 0;
+
+}
+.submit-btn {
+	text-align: center;
+	margin-top: 16px; 
+}
