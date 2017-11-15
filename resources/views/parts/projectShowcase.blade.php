@@ -1,5 +1,5 @@
 @foreach($data['project'] as $key => $entry)
-<div class="col-sm-6 col-md-3">
+<div class="col-sm-6 col-md-3 showcase" id="{{$entry['id']}}">
 	<div class="project-wrapper">
 	    <div class="project-img">
 			<img src="{{asset($entry['picture'])}}">
@@ -20,3 +20,18 @@
 	</div>
 </div>
 @endforeach
+
+<script>
+$(".project-detail").dotdotdot({
+	ellipsis	: '... ',
+	wrap		: 'word',
+	fallbackToLetter: true,
+	watch: "window"
+});
+$(".project-title-word").dotdotdot({
+	ellipsis	: '... ',
+	wrap		: 'word',
+	fallbackToLetter: true,
+	watch: "window"
+});
+</script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\catalog;
 use App\project;
+use App\catalog_type;
 use App\event_type;
 
 class PageController extends Controller
@@ -41,6 +42,21 @@ class PageController extends Controller
         return view('CMS.NewProject',compact('type'));
     }
 
+    public function getCatalog(){
+        $catalog = new catalog();
+        $catalog_type = new catalog_type();
+
+        $type = $catalog_type->getAll();
+        $payload = $catalog->getAll();
+
+        foreach ($payload as $key => $entries) {
+            $payload[$type[$key][0]['name']] = $payload[$key];
+            unset($payload[$key]);
+        }
+
+        return view('catalog')->with('payload',$payload);
+    }
+
     public function project($id = 'all'){
         $project = new project();
         
@@ -49,6 +65,12 @@ class PageController extends Controller
             $data = array();
 
             $data['project'] = $project->getAll();
+
+            foreach ($data['project'] as $key => $entry) {
+                $data['search'][$entry['id']] = $entry['name'];
+                //sterilize?
+            }
+            // dd($data['search']);
 
             return view('project',compact('data'));
         } else {

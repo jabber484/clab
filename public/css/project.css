@@ -1,3 +1,6 @@
+section {
+    margin-bottom: 24px;
+}
 .panel {
 	font-family: 'Roboto', sans-serif;
 }
@@ -13,7 +16,22 @@ a.readmore, a.readless {
     color: grey;
 }
 
+.search-bar {
+    width: 100%;
+    padding: 4px;
+    margin-top: 8px;
+    color: grey;
+}
+.search-checkbox {
+    float: left;
+    padding-top: 8px;
+    padding-right: 8px;
+}
+
 /*project*/
+.project-empty{
+    margin: 16px;
+}
 .project-stream {
     position: absolute;
     top: 8px;

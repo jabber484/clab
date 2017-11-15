@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-12 col-md-6">
+	<div class="col-xs-12 col-sm-6">
 		<div class="big-button big-button-tool">
 		<a href="/catalogue">
 		    <div class="big-button-word">
@@ -10,7 +10,7 @@
 		</a>    
 		</div>
 	</div>
-	<div class="col-xs-12 col-md-6">
+	<div class="col-xs-12 col-sm-6">
 		<div class="big-button big-button-project">
 		<a href="/project/new">
 		    <div class="big-button-word">

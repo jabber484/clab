@@ -13,7 +13,7 @@
 
 Route::get('/', 'PageController@landing');
 
-Route::get('catalogue', 'CatalogController@getCatalog');
+Route::get('/catalogue', 'PageController@getCatalog');
 
 Route::get('/about', 'PageController@about');
 

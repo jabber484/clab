@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Catalog extends Migration
+class CatalogType extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class Catalog extends Migration
      */
     public function up()
     {
-        Schema::create('catalogs', function (Blueprint $table) {
+        Schema::create('catalog_types', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->integer('type');
             $table->string('name');
-            $table->text('description');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class Catalog extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalogs');
+        //
     }
 }
