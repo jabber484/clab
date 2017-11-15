@@ -15,11 +15,25 @@
 	margin-top: 16px; 
 }
 
-
 .cart-wrapper {
 	min-height: 200px;
 }
 .catalog-wrapper{
 	overflow: auto;
-    max-height: 650px;
+    max-height: 870px;
+}
+
+.cart-item-wrapper{
+	margin: 8px 0;
+}
+.cart-item {
+    clear: right;
+    float: left;
+}
+.cart-item-delete {
+    float: right;
+    padding: 8px;
+}
+.cart-item-spacer {
+    padding-bottom: 40px;
 }

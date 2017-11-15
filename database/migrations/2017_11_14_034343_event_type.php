@@ -27,6 +27,6 @@ class EventType extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('event_types');
     }
 }

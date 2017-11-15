@@ -39,7 +39,7 @@
 			<div class="content-title">Event Calendar</div>
 		</div>
 		<div class="col-xs-12 calendar">
-			<div id='calendar'></div>
+			@include("parts.calendar")
 		</div>		
 	</div>
 </section>
@@ -65,17 +65,6 @@
 		      },
 		  	}
 		});
-
-		$('#calendar').fullCalendar({
-	        header: {
-	        	left:   'prev,next',
-			    center: '',
-			    right:  'title',
-	        },
-	        height: 520,
-	        fixedWeekCount: false,
-	        showNonCurrentDates: false
-	    });
 
 	    $('section:even').css({
 	    	"background": "#f5f5f5",

@@ -56,6 +56,7 @@
 	    margin-top: 8px;
 	}
 	.content-title {
+	    text-shadow: 0px 1px 2px rgba(87, 87, 87, 0.2);
 	    background: rgba(254, 223, 90, 0.7);
 	    border-left: 8px solid;
 	    font-size: 26px;

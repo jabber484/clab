@@ -27,6 +27,6 @@ class CatalogType extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('catalog_types');
     }
 }
