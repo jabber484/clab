@@ -72,7 +72,7 @@
 							</div>							
 						</div>
 						<div class="field">
-							<div class="subtitle">Calendar</div>
+							<div class="subtitle">Current Booking</div>
 							<div class="field">
 							@include("parts.calendar")
 							</div>
