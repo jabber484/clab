@@ -28,6 +28,7 @@
     width: 120px;
 }
 .item-add{
+    cursor: pointer;
     position: absolute;
     bottom: 16px;
     left: 30px;

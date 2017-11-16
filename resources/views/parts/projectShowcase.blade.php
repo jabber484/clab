@@ -2,7 +2,7 @@
 <div class="col-sm-6 col-md-3 showcase" id="{{$entry['id']}}">
 	<div class="project-wrapper">
 	    <div class="project-img">
-			<img src="{{asset($entry['picture'])}}">
+			<img src="{{asset($entry['thumbnail'])}}">
 	    </div>
 	    <div class="project-title">
 	    	<div class="project-title-word">{{$entry['name']}}</div>

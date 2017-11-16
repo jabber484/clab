@@ -35,7 +35,7 @@
 					@endif
 			    </div>
 		   		<div class="col-md-6 project-img">
-					<img src={{$data['picture']}}>
+					<img src={{asset($data['picture'])}}>
 			    </div>
 		    </div>
 		    

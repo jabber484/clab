@@ -82,6 +82,15 @@
 				</div>
 			</div>
 			
+			{{-- Image --}}
+			<div class="subtitle">Photo</div>
+			<div class="field">
+				<div class="cover-wrapper">
+			 		<input type="file" name="files[]" multiple="multiple" title="Click to add Files">
+				</div>
+				<div class="cover-done" style="display: none"></div>
+			</div>
+
 			{{-- Content --}}
 			<div class="subtitle">Short Description</div>
 			<div class="field">
@@ -123,11 +132,34 @@
 
 
 <script>
+var path = null;
+var name;
+
+$(".cover-wrapper").dmUploader({
+	url: "/project/new/post/image",
+	method: "post",
+	onInit: function(){
+	  // console.log('Plugin successfully initialized');
+	},
+	onNewFile: function(id, file){
+		name = file.name;	
+	},
+	onUploadSuccess: function(id, data){
+	  // console.log('Server response was:');
+	  // console.log(data);
+	  $(".cover-wrapper").hide();
+	  $(".cover-done").show();
+	  $(".cover-done").html("Uplaoded " + name);
+	  path = data;
+	},
+	maxFiles: 1,
+});
+
 $('textarea').froalaEditor({
-		height: 300
+	height: 300
 });
 $('textarea2').froalaEditor({
-		height: 100
+	height: 100
 });
 
 $('.submit-btn').click(function(){
@@ -138,6 +170,7 @@ $('.submit-btn').click(function(){
 		  Idea: $('#idea').html() == 1 ? 1 : 0,
 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
+		  picture : path, 
 		  short : $('textarea2').froalaEditor('html.get'), 
 		  full : $('textarea').froalaEditor('html.get'), 
 		  alias : $('#alias').val(),

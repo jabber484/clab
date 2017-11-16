@@ -22,6 +22,7 @@ Route::get('/contact', 'PageController@contact');
 Route::get('/guideline', 'PageController@guideline');
 
 Route::get('/project/new', 'PageController@newproject');
+Route::post('/project/new/post/image', 'ProjectController@newProjectImage');
 Route::post('/project/new/post', 'ProjectController@newProject');
 Route::get('/project/{id}', 'PageController@project');
 Route::get('/project', 'PageController@project');

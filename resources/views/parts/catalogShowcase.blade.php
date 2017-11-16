@@ -34,7 +34,8 @@
 						@if($onBooking == 0)
 						<div class="item-book"><a href="/book/new/{{$record['id']}}">Book this</a></div>
 						@else
-						<div class="item-add" id="{{$record['id']}}"><button class="btn">Add this</button></div>
+						<div class="item-add" id="{{$record['id']}}">Add this</div>
+						{{-- <div class="item-add" ><button class="btn">Add this</button></div> --}}
 						@endif
 					</div>
 				</div>

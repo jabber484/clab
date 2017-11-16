@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('style')
-<link href="css/project.css" rel="stylesheet">
+<link href="{{asset("css/project.css")}}" rel="stylesheet">
 @endsection	
 
 @section('content')

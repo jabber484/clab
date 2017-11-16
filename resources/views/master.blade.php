@@ -33,6 +33,8 @@
  	<script src={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js")}}></script>
  	<link rel="stylesheet" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css")}}>
  	<link rel="stylesheet" media="print" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css")}}>
+	
+	<script src={{asset("js/dmuploader.min.js")}}></script>
  	
  	{{-- font --}}
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
