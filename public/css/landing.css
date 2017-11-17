@@ -248,19 +248,3 @@ button.fc-corner-right, button.fc-corner-left {
         min-height: 0;
     }
 }
-
-.stream-1 { /* Art */
-    background-color: #FF776B;
-}
-.stream-2 { /* Design */
-    background-color: #FFB745;
-}
-.stream-3 { /* Entrepreneurship-and-Management */
-    background-color: #CA5DFF;
-}
-.stream-4 { /* Sci-and-Tech */
-    background-color: #185EE8;
-}
-.stream-5 { /* Sociopolitical */
-    background-color: #47F2B7;
-}
