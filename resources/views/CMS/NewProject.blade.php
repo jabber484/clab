@@ -173,6 +173,7 @@ $('.submit-btn').click(function(){
 		  picture : path, 
 		  short : $('textarea2').froalaEditor('html.get'), 
 		  full : $('textarea').froalaEditor('html.get'), 
+		  sid : {{Session::get('sid')}},
 		  alias : $('#alias').val(),
 		  contact : $('#contact').val(),
 	})

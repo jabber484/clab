@@ -21,6 +21,7 @@ class ProjectController extends Controller
 		$project->thumbnail = str_replace("large","thumbnail",$request->picture);
 		$project->short_des = $request->short;
 		$project->description = $request->full;
+		$project->sid = $request->sid;
 		$project->alias = $request->alias;
 		$project->contact = $request->contact;
 

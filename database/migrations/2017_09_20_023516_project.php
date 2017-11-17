@@ -24,6 +24,7 @@ class Project extends Migration
             $table->boolean('isIdea');
             $table->date('fromDate')->nullable();
             $table->date('toDate')->nullable();
+            $table->text('sid');
             $table->text('alias');
             $table->text('contact');
             $table->timestamps();
