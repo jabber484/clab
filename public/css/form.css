@@ -11,15 +11,17 @@
 }
 .submit-btn {
 	text-align: center;
-	margin-top: 16px; 
+    margin-bottom: 16px;
 }
-
+.submit-btn-catalog {
+    margin-top: 90px;
+}
 .cart-wrapper {
 	min-height: 200px;
 }
 .catalog-wrapper{
 	overflow: auto;
-    max-height: 870px;
+    max-height: 940px;
 }
 
 .cart-item-wrapper{

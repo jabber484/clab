@@ -15,7 +15,12 @@ a.readmore, a.readless {
     cursor: pointer;
     color: grey;
 }
-
+.btn-new {
+    border-radius: 16px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 100%;
+}
 .search-bar {
     width: 100%;
     padding: 4px;

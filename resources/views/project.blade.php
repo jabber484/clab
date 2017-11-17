@@ -10,8 +10,10 @@
 		<div class="content-title">
 			Projects
 		</div>
-		
+
 		<input class="search-bar" type="text" name="projectSearch" placeholder="Search">
+		<a href="/project/new"><button class="btn btn-new btn-primary">New Project</button></a>
+
 		<div class="col-xs-12">
 			@include("parts.projectShowcase")
 		</div>

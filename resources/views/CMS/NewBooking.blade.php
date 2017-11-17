@@ -71,11 +71,16 @@
 								</div>
 							</div>							
 						</div>
+					</div>
+
+					<div class="field submit-btn submit-btn-catalog">
+						<button class="btn btn-success">Submit</button>
+					</div>
+					
+					<div class="field">
+						<div class="subtitle">Current Booking</div>
 						<div class="field">
-							<div class="subtitle">Current Booking</div>
-							<div class="field">
-							@include("parts.calendar")
-							</div>
+						@include("parts.calendar")
 						</div>
 					</div>
 				</div>
@@ -89,9 +94,7 @@
 				</div>
 			</div>
 
-			<div class="field submit-btn">
-				<button class="btn btn-success">Submit</button>
-			</div>
+
 		</div>
 	</div>
 </section>
