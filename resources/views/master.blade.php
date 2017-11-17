@@ -105,13 +105,14 @@
 		@yield('content')
 	</div>
 
-  @include('parts.footer')
-</html>
+  	@include('parts.footer')
 
-<script type="text/javascript">
-	$.ajaxSetup({
-	    headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	    }
-	});
-</script>
+  	<script type="text/javascript">
+		$.ajaxSetup({
+		    headers: {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		    }
+		});
+	</script>
+</body>
+</html>

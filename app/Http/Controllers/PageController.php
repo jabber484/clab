@@ -94,4 +94,10 @@ class PageController extends Controller
             return view('projectDetail',compact('data'));
         }
     }
+
+    public function login(){
+        
+        return view('gateway');
+    }
+
 }

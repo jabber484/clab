@@ -5,7 +5,15 @@
 @endsection	
 
 @section('content')
-{{-- @include('parts.fbpage') --}}
+<section class="membership">
+	<div class="container">
+		@if(!Session::has('auth') || Session::get('auth') == 0 )
+		Login to C!ab before Booking Equipment or to Create Project. <a href="/login">Click here to login.</a>
+		@else
+		Logged in as {{Session::get('sid')}}. <a href="/logout">Logout Here.</a>
+		@endif
+	</div>
+</section>
 
 <section class="slides">
 	<div class="container">

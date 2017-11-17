@@ -11,6 +11,15 @@
 |
 */
 
+Route::group(['middleware' => ['user']], function () {
+	Route::get('/project/new', 'PageController@newproject');
+
+	Route::get('/book/new', 'PageController@newBooking');
+	Route::get('/book/new/{id}', 'PageController@newBooking');
+
+	Route::get('/logout', 'AuthController@logout');
+});
+
 Route::get('/', 'PageController@landing');
 
 Route::get('/catalogue', 'PageController@getCatalog');
@@ -21,11 +30,11 @@ Route::get('/contact', 'PageController@contact');
 
 Route::get('/guideline', 'PageController@guideline');
 
-Route::get('/project/new', 'PageController@newproject');
 Route::post('/project/new/post/image', 'ProjectController@newProjectImage');
 Route::post('/project/new/post', 'ProjectController@newProject');
 Route::get('/project/{id}', 'PageController@project');
 Route::get('/project', 'PageController@project');
 
-Route::get('/book/new', 'PageController@newBooking');
-Route::get('/book/new/{id}', 'PageController@newBooking');
+
+Route::get('/login', 'PageController@login');
+Route::post('/auth', 'AuthController@login');

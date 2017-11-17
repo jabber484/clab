@@ -32,7 +32,7 @@ section {
   margin-top: 0;
   padding-bottom: 16px;
 }
-section:not(:first-of-type) {
+section:not(.slides) {
   padding-top: 16px;
 }
 .landing-title {
@@ -44,8 +44,10 @@ section:not(:first-of-type) {
     padding-bottom: 4px;
     text-align: center;
 }
-
-
+.membership {
+    text-shadow: 0px 1px 2px rgba(87, 87, 87, 0.1);
+    font-style: italic;
+}
 
 /*slide*/
 #slides {
@@ -134,6 +136,10 @@ button.fc-corner-right, button.fc-corner-left {
 }
 .big-button-project{
     background-image: url("https://media.giphy.com/media/bIoHUGOzzdrzO/giphy.gif");
+}
+.big-button-login{
+    background-position: 75px -44px;
+    background-image: url("https://media.giphy.com/media/uLda64US3sb16/giphy.gif");
 }
 .big-button-word {
     font-family: 'Roboto', sans-serif;
