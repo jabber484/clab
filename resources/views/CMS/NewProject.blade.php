@@ -88,7 +88,7 @@
 				<div class="cover-wrapper">
 			 		<input type="file" name="files[]" multiple="multiple" title="Click to add Files">
 				</div>
-				<div class="cover-done" style="display: none"></div>
+				<div class="cover-log" style="display: none"></div>
 			</div>
 
 			{{-- Content --}}
@@ -134,23 +134,34 @@
 <script>
 var path = null;
 var name;
+var uploading = 0;
 
 $(".cover-wrapper").dmUploader({
 	url: "/project/new/post/image",
 	method: "post",
+	maxFileSize: 2500000,
 	onInit: function(){
 	  // console.log('Plugin successfully initialized');
 	},
+	onUploadProgress: function(id,percent){
+		$(".cover-wrapper").hide();
+		$(".cover-log").show();
+		$(".cover-log").empty();
+		$(".cover-log").html("Uplaoding..."+ percent + "%");
+	},
 	onNewFile: function(id, file){
+		uploading = 1;
 		name = file.name;	
 	},
 	onUploadSuccess: function(id, data){
 	  // console.log('Server response was:');
 	  // console.log(data);
-	  $(".cover-wrapper").hide();
-	  $(".cover-done").show();
-	  $(".cover-done").html("Uplaoded " + name);
-	  path = data;
+		$(".cover-wrapper").hide();
+		$(".cover-log").show();
+		$(".cover-log").empty();
+		$(".cover-log").html("Uplaoded " + name);
+		path = data;
+		uploading = 0;
 	},
 	maxFiles: 1,
 });
@@ -164,6 +175,9 @@ $('textarea2').froalaEditor({
 
 $('.submit-btn').click(function(){
 
+	if (uploading == 1){
+		alert("Please wait for image to be uploaded.")
+	}
 	$.post("/project/new/post" ,
 		{ title : $('#cat').val(),
 		  cat : $('#cat').val(), 
@@ -184,7 +198,6 @@ $('.submit-btn').click(function(){
 	}).done(function(xhr, ajaxOptions, thrownError) {
 		window.location.replace("/project/"+xhr);
 	});
-
 });
 
 </script>
