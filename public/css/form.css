@@ -8,18 +8,36 @@
 }
 .field {
 	margin: 8px 0;
-
 }
 .submit-btn {
 	text-align: center;
-	margin-top: 16px; 
+    margin-bottom: 16px;
 }
-
-
+.submit-btn-catalog {
+    margin-top: 90px;
+}
 .cart-wrapper {
 	min-height: 200px;
 }
 .catalog-wrapper{
 	overflow: auto;
-    max-height: 650px;
+    max-height: 940px;
+}
+
+.cart-item-wrapper{
+	margin: 8px 0;
+}
+.cart-item {
+    clear: right;
+    float: left;
+}
+.cart-item-delete {
+    float: right;
+    padding: 8px;
+}
+.cart-item-spacer {
+    padding-bottom: 40px;
+}
+.form-control{
+    margin-bottom: 1px;
 }

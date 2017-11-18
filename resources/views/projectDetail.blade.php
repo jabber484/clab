@@ -24,24 +24,24 @@
 
 			    	
 			    	{!!$data['description']!!}
+			    	@if($data['alias'] != NULL && $data['contact'] != NULL)
+					<div class="contact-content">
+						{{-- <div class="container-fluid"> --}}
+							Contact Project Creator:<br>
+							{{$data['alias']}}<br>
+							{{$data['contact']}}
+						{{-- </div> --}}
+					</div>
+					@endif
 			    </div>
 		   		<div class="col-md-6 project-img">
-					<img src={{$data['picture']}}>
+					<img src={{asset($data['picture'])}}>
 			    </div>
 		    </div>
 		    
     		
 		</div>
 	</div>
-	@if($data['alias'] != NULL && $data['contact'] != NULL)
-	<div class="contact-content">
-		<div class="container-fluid">
-			Contact Project Creator:<br>
-			{{$data['alias']}}<br>
-			{{$data['contact']}}
-		</div>
-	</div>
-	@endif
 </section>
 
 <script>

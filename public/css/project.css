@@ -15,7 +15,12 @@ a.readmore, a.readless {
     cursor: pointer;
     color: grey;
 }
-
+.btn-new {
+    border-radius: 16px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    width: 100%;
+}
 .search-bar {
     width: 100%;
     padding: 4px;
@@ -190,20 +195,4 @@ a.readmore, a.readless {
     .project-stream-word {
         margin: 0 30px;
     }
-}
-
-.stream-1 { /* Art */
-    background-color: #FF776B;
-}
-.stream-2 { /* Design */
-    background-color: #FFB745;
-}
-.stream-3 { /* Entrepreneurship-and-Management */
-    background-color: #CA5DFF;
-}
-.stream-4 { /* Sci-and-Tech */
-    background-color: #185EE8;
-}
-.stream-5 { /* Sociopolitical */
-    background-color: #47F2B7;
 }

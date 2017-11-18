@@ -1,8 +1,29 @@
+<style type="text/css">
+.stream-1 { /* Art */
+    background-color: #FF776B;
+}
+.stream-2 { /* Design */
+    background-color: #FFB745;
+}
+.stream-3 { /* Entrepreneurship-and-Management */
+    background-color: #CA5DFF;
+}
+.stream-4 { /* Sci-and-Tech */
+    background-color: #52c7ff;
+}
+.stream-5 { /* Sociopolitical */
+    background-color: #fff823;
+}
+.stream-wys { /* College related */
+    background-color: #47F2B7;
+}
+</style>
+
 @foreach($data['project'] as $key => $entry)
 <div class="col-sm-6 col-md-3 showcase" id="{{$entry['id']}}">
 	<div class="project-wrapper">
 	    <div class="project-img">
-			<img src="{{asset($entry['picture'])}}">
+			<img src="{{asset($entry['thumbnail'])}}">
 	    </div>
 	    <div class="project-title">
 	    	<div class="project-title-word">{{$entry['name']}}</div>
@@ -16,7 +37,7 @@
 		</div>
 	</div>
 	<div class="project-stream">
-		<div class="project-stream-word stream-{{$entry["streamNum"]}}">{{$entry["type"]}}</div>
+		<div class="project-stream-word stream-{{$entry["streamNum"] > 5 ? 'wys' : $entry["streamNum"]}}">{{$entry["type"]}}</div>
 	</div>
 </div>
 @endforeach

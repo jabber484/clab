@@ -33,6 +33,8 @@
  	<script src={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js")}}></script>
  	<link rel="stylesheet" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css")}}>
  	<link rel="stylesheet" media="print" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css")}}>
+	
+	<script src={{asset("js/dmuploader.min.js")}}></script>
  	
  	{{-- font --}}
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -56,6 +58,7 @@
 	    margin-top: 8px;
 	}
 	.content-title {
+	    text-shadow: 0px 1px 2px rgba(87, 87, 87, 0.2);
 	    background: rgba(254, 223, 90, 0.7);
 	    border-left: 8px solid;
 	    font-size: 26px;
@@ -102,13 +105,14 @@
 		@yield('content')
 	</div>
 
-  @include('parts.footer')
-</html>
+  	@include('parts.footer')
 
-<script type="text/javascript">
-	$.ajaxSetup({
-	    headers: {
-	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	    }
-	});
-</script>
+  	<script type="text/javascript">
+		$.ajaxSetup({
+		    headers: {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		    }
+		});
+	</script>
+</body>
+</html>

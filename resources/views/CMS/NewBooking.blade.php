@@ -18,8 +18,9 @@
 					<div class="field">
 						<div class="subtitle">Shopping Cart</div>
 						<div class="cart-wrapper">
-							<div class="cart-empty">No Item</div>
-
+							<div class="cart-empty" style="display: none;">No Item</div>
+							<div class="cart-item-wrapper">
+							</div>
 						</div>
 					</div>
 
@@ -71,6 +72,17 @@
 							</div>							
 						</div>
 					</div>
+
+					<div class="field submit-btn submit-btn-catalog">
+						<button class="btn btn-success">Submit</button>
+					</div>
+					
+					<div class="field">
+						<div class="subtitle">Current Booking</div>
+						<div class="field">
+						@include("parts.calendar")
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="field">
@@ -82,9 +94,7 @@
 				</div>
 			</div>
 
-			<div class="field submit-btn">
-				<button class="btn btn-success">Submit</button>
-			</div>
+
 		</div>
 	</div>
 </section>
@@ -92,28 +102,75 @@
 
 
 <script>
-// $('.submit-btn').click(function(){
+var cart = [];
+var prescripted = '{{$prescripted}}';
 
-// 	$.post("/project/new/post" ,
-// 		{ title : $('#cat').val(),
-// 		  cat : $('#cat').val(), 
-// 		  Idea: $('#idea').html() == 1 ? 1 : 0,
-// 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
-// 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
-// 		  short : $('textarea2').froalaEditor('html.get'), 
-// 		  full : $('textarea').froalaEditor('html.get'), 
-// 		  alias : $('#alias').val(),
-// 		  contact : $('#contact').val(),
-// 	})
-// 	.fail(function(xhr, ajaxOptions, thrownError) {
-// 	    console.log(xhr.responseText);
-// 	    console.log(thrownError);
-// 	    console.log('Ajax Error');
-// 	}).done(function(xhr, ajaxOptions, thrownError) {
-// 		window.location.replace("/project/"+xhr);
-// 	});
+function renderCart(){
+	var name;
+	var allX = true;
 
-// });
+	$(".cart-item-wrapper").html("");
+	$.each(cart, function(key,value){
+		if(value != 'X'){
+			allX = false;
+		} else 
+			return;
 
+		name = $("#"+value+".item-title").html();
+		$(".cart-item-wrapper").append("<div class='cart-item-spacer'></div>");
+		$(".cart-item-spacer:last").append("<div class='cart-item'>" + name + "</div>");
+		$(".cart-item-spacer:last").append("<button class='btn cart-item-delete' value='" + value + "'>" + "Delete" + "</button>");
+	});
+
+	if(allX){
+		$(".cart-empty").show();
+		return 0;
+	} else {
+		$(".cart-empty").hide();
+	}
+}
+
+//add item
+$('.item-add').click(function(){
+	var item_id = $(this).attr('id');
+
+	if(!cart.includes(item_id)){
+		cart.push(item_id);
+		renderCart();
+	}
+});
+
+//delete item
+$("body").on('click', '.cart-item-delete', function(event) {
+	var item_id = event['target']['value'];
+	cart[cart.indexOf(item_id)] = "X";
+	console.log(cart);
+	renderCart();
+});
+
+$(function(){
+	if(prescripted != 'X')
+		$("#"+prescripted+".item-add").click();
+	renderCart();
+});
+
+	// $.post("/project/new/post" ,
+	// 	{ title : $('#cat').val(),
+	// 	  cat : $('#cat').val(), 
+	// 	  Idea: $('#idea').html() == 1 ? 1 : 0,
+	// 	  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
+	// 	  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
+	// 	  short : $('textarea2').froalaEditor('html.get'), 
+	// 	  full : $('textarea').froalaEditor('html.get'), 
+	// 	  alias : $('#alias').val(),
+	// 	  contact : $('#contact').val(),
+	// })
+	// .fail(function(xhr, ajaxOptions, thrownError) {
+	//     console.log(xhr.responseText);
+	//     console.log(thrownError);
+	//     console.log('Ajax Error');
+	// }).done(function(xhr, ajaxOptions, thrownError) {
+	// 	window.location.replace("/project/"+xhr);
+	// });
 </script>
 @endsection

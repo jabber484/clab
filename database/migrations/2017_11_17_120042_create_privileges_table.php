@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CatalogType extends Migration
+class CreatePrivilegesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CatalogType extends Migration
      */
     public function up()
     {
-        Schema::create('catalog_types', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('name');
+        Schema::create('privileges', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('sid');
+            $table->integer('right');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CatalogType extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('catalog_types');
+        Schema::dropIfExists('privileges');
     }
 }

@@ -20,9 +20,11 @@ class Project extends Migration
             $table->text('short_des');
             $table->text('description');
             $table->string('picture')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->boolean('isIdea');
             $table->date('fromDate')->nullable();
             $table->date('toDate')->nullable();
+            $table->text('sid');
             $table->text('alias');
             $table->text('contact');
             $table->timestamps();

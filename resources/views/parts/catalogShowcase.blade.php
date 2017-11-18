@@ -28,13 +28,14 @@
 							<img src="{{asset('asset/catalogue/'.$record['id'].'.jpg')}}">
 						</div>	
 						<div class="item-des">
-							<div class="item-title">{{$record['name']}}</div>
+							<div class="item-title" id="{{$record['id']}}">{{$record['name']}}</div>
 							<div class="item-subtitle">{{$record['description']}}</div>
 						</div>
 						@if($onBooking == 0)
-						<div class="item-book"><a href="/book?item={{$record['id']}}">Book this</a></div>
+						<div class="item-book"><a href="/book/new/{{$record['id']}}">Book this</a></div>
 						@else
-						<div class="item-add"><button class="btn">Add this</button></div>
+						<div class="item-add" id="{{$record['id']}}">Add this</div>
+						{{-- <div class="item-add" ><button class="btn">Add this</button></div> --}}
 						@endif
 					</div>
 				</div>

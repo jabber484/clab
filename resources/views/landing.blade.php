@@ -5,7 +5,15 @@
 @endsection	
 
 @section('content')
-{{-- @include('parts.fbpage') --}}
+<section class="membership">
+	<div class="container">
+		@if(!Session::has('auth') || Session::get('auth') == 0 )
+		Login to C!ab before Booking Equipment or to Create Project. <a href="/login">Click here to login.</a>
+		@else
+		Logged in as {{Session::get('sid')}}. <a href="/logout">Logout Here.</a>
+		@endif
+	</div>
+</section>
 
 <section class="slides">
 	<div class="container">
@@ -39,7 +47,7 @@
 			<div class="content-title">Event Calendar</div>
 		</div>
 		<div class="col-xs-12 calendar">
-			<div id='calendar'></div>
+			@include("parts.calendar")
 		</div>		
 	</div>
 </section>
@@ -65,17 +73,6 @@
 		      },
 		  	}
 		});
-
-		$('#calendar').fullCalendar({
-	        header: {
-	        	left:   'prev,next',
-			    center: '',
-			    right:  'title',
-	        },
-	        height: 520,
-	        fixedWeekCount: false,
-	        showNonCurrentDates: false
-	    });
 
 	    $('section:even').css({
 	    	"background": "#f5f5f5",
