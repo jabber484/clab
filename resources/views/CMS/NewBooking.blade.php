@@ -152,25 +152,48 @@ $(function(){
 	if(prescripted != 'X')
 		$("#"+prescripted+".item-add").click();
 	renderCart();
+
+	$('.submit-btn').click(function(){
+		//validate....
+
+
+		var final_cart = [];
+		$.each(cart, function(key,value){
+			if(value != "X"){
+				final_cart.push(value);
+			}
+		});
+		if(final_cart.length == 0){
+			alert("No item in kart!")
+			return false; 
+		}
+
+		$.post("/booking/create" ,{ 
+			item : JSON.stringify(final_cart),
+			from : $("#fYear").val() + "-" + $("#fMonth").val() + "-" + $("#fDay").val(),
+			to : $("#tYear").val() + "-" + $("#tMonth").val() + "-" + $("#tDay").val(),
+		})
+		.fail(function(xhr, ajaxOptions, thrownError) {
+		    console.log(xhr.responseText);
+		    console.log(thrownError);
+		    console.log('Ajax Error');
+		}).done(function(xhr, ajaxOptions, thrownError) {
+			var result = xhr;
+
+			if(result['success']){
+
+			} else {
+				var message = "The following item is not avalibale during you submitted period:\n";
+				$.each(result['item_NA_des'], function(key,item){
+					message = message + item['description'] + ": not avalible till " + item['to'];
+				});
+				alert(message);
+			}
+		});
+
+	});
 });
 
-	// $.post("/project/new/post" ,
-	// 	{ title : $('#cat').val(),
-	// 	  cat : $('#cat').val(), 
-	// 	  Idea: $('#idea').html() == 1 ? 1 : 0,
-	// 	  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
-	// 	  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
-	// 	  short : $('textarea2').froalaEditor('html.get'), 
-	// 	  full : $('textarea').froalaEditor('html.get'), 
-	// 	  alias : $('#alias').val(),
-	// 	  contact : $('#contact').val(),
-	// })
-	// .fail(function(xhr, ajaxOptions, thrownError) {
-	//     console.log(xhr.responseText);
-	//     console.log(thrownError);
-	//     console.log('Ajax Error');
-	// }).done(function(xhr, ajaxOptions, thrownError) {
-	// 	window.location.replace("/project/"+xhr);
-	// });
+
 </script>
 @endsection

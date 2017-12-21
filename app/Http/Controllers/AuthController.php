@@ -18,17 +18,20 @@ class AuthController extends Controller
     }
 
 	public function login(Request $request){ //For Gateway
+        //dd($request->sid,$request->password);
         $result = $this->login->auth($request->sid,$request->password);
-        if($result == true){
+        
+        if($result){
             $request->session()->put('auth',"1");
-            $request->session()->put('sid',$request->sid);
+            session(['sid' => '');
 
             return redirect('/');
         }
 
         //0 -> no match
-
-        return view("gateway")->with("status","0");
+        
+        $request->session()->put('auth',"0");
+        return view("gateway")->with("error","0");
     }
 
     public function logout(Request $request){
