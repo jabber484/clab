@@ -25,6 +25,12 @@ class PageController extends Controller
     	return view('about');
     }
 
+    public function admin(){
+        //validate
+
+        return view('admin');
+    }
+
     public function contact(){
     	
     	return view('contact');

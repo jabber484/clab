@@ -31,6 +31,7 @@ class AuthController extends Controller
         
         $request->session()->put('sid',"");
         $request->session()->put('auth',"0");
+        $request->session()->put('role',"");
         return view("gateway")->with("error","0");
     }
 

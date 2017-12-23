@@ -34,11 +34,11 @@
 				<div class="subtitle">Problem?</div>
 				<div class="field">
 					<button class="btn btn-primary" style="width: 100%;margin-top: 1px;">New User</button>
-					<button class="btn btn-primary" style="width: 100%;margin-top: 1px;">Forget Password</button>
+					{{-- <button class="btn btn-primary" style="width: 100%;margin-top: 1px;">Forget Password</button> --}}
 				</div>
 				<br>
 				<div>
-					If problem persist, please contact XXX (ddd@sdfdfd.com).
+					If problem persist, please contact Florence Tsui (florencetsui@cuhk.edu.hk).
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,18 @@
+@extends('master')
+
+@section('style')
+<link href="{{asset("css/form.css")}}" rel="stylesheet">
+@endsection	
+
+@section('content')
+<section class="guideline">
+	<div class="container">
+		<div class=" col-xs-12 content-title">
+			Admin Section
+		</div>
+
+		@include('CMS.admin.list')
+	</div>
+</section>
+
+@endsection

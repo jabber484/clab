@@ -25,7 +25,7 @@
 				@endif
 					<div class="item">
 						<div class="item-img">	
-							<img src="{{asset('asset/catalogue/'.$record['id'].'.jpg')}}">
+							<img src="{{asset('storage/catalogue/'.$record['id'].'.jpg')}}">
 						</div>	
 						<div class="item-des">
 							<div class="item-title" id="{{$record['id']}}">{{$record['name']}}</div>
