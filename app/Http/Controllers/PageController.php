@@ -30,6 +30,10 @@ class PageController extends Controller
 
         return view('admin');
     }
+    public function register(){
+
+        return view('register');
+    }
 
     public function contact(){
     	
@@ -71,7 +75,7 @@ class PageController extends Controller
 
     public function BookingDone(){
         
-        return view('CMS.NewBooking_success');
+        return view('success_response')->with("from","booking");
     }
 
     public function getCatalog(){

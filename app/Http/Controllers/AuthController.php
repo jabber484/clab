@@ -19,7 +19,7 @@ class AuthController extends Controller
 
 	public function login(Request $request){ //For Gateway
         //dd($request->sid,$request->password);
-        $result = $this->login->auth($request->sid,$request->password);
+        $result = $this->login->auth($request->sid,md5($request->password));
         
         if($result){
             $request->session()->put('auth',"1");
@@ -36,7 +36,7 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
-        $this->user->setAuth(0);
+        // $this->user->setAuth(0);
         $this->user = null;
 
         $request->session()->put('auth',"0");

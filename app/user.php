@@ -3,17 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
 
 class user extends Model
 {
-    private $auth;
-
-    public function setAuth($value){
-    	$this->auth = $value;
-	}
-
-	public function getAuth(){
-    	return $this->auth;
+	public function checkUser($sid){
+    	
+    	return count($this->where('sid', $sid)->get()->toArray()) != 0;
 	}
     
+    public function checkRegistered($sid){
+    	
+    	return count(DB::table('logins')->where('sid', $sid)->get()->toArray()) != 0;
+	}
 }

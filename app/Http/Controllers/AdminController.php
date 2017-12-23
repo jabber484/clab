@@ -6,9 +6,41 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Excel;
+use App\user;
+use App\login;
 
 class AdminController extends Controller
 {
+    public function register(Request $request){
+        $user = new user();
+        $login = new login();
+
+        $sid = $request->sid;
+        $password = md5($request->pw);
+        $password2 = md5($request->pw);
+
+        if(!$user->checkUser($sid)){
+            //not WYS
+            return view('register')->with('error','0');
+
+        } else if($user->checkRegistered($sid)){
+            //registered
+            return view('register')->with('error','1');
+
+        } else if($password != $password2) { 
+            //password not match
+            return view('register')->with('error','2');
+
+        } else {
+            //is WYS and not registered and oassword ok
+            $login->sid = $sid;
+            $login->password = $password;
+
+            $login->save();
+            return view('success_response')->with('from','register');
+        }
+    }
+
     public function importList(Request $request){
     	$excel = $request->file('file');
     	$filename = $excel->getClientOriginalName();
@@ -41,7 +73,7 @@ class AdminController extends Controller
     	return $message;
     }
 
-    public function exportList(Request $export){
+    public function exportList(Request $request){
     	$data = DB::table('users')->get()->toArray();
     	$result = array();
 		foreach ($data as $entry)
@@ -53,5 +85,15 @@ class AdminController extends Controller
 		        $sheet->fromArray($data);
 		    });
 		})->download('xlsx');
+    }
+
+    public function exportSample(Request $request){
+        Excel::create('server_user_list_sample', function($excel){
+            $excel->sheet('user', function($sheet) {
+                $sheet->fromArray(
+                    array("sid","role")
+                );
+            });
+        })->download('xlsx');
     }
 }

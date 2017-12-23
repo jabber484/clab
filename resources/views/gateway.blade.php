@@ -33,7 +33,7 @@
 			<div class="col-sm-6">
 				<div class="subtitle">Problem?</div>
 				<div class="field">
-					<button class="btn btn-primary" style="width: 100%;margin-top: 1px;">New User</button>
+					<a href="/register"><button class="btn btn-primary" style="width: 100%;margin-top: 1px;">New User</button></a>
 					{{-- <button class="btn btn-primary" style="width: 100%;margin-top: 1px;">Forget Password</button> --}}
 				</div>
 				<br>

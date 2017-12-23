@@ -8,6 +8,7 @@
 @section('content')
 <section class="project">
 	<div class="container">
+		@if($from == "booking")
 		<div class="content-title">
 			New Booking
 		</div>
@@ -17,6 +18,18 @@
 				You have completed your booking.
 			</div>
 		</div>
+		@elseif($from == "register")
+		<div class="content-title">
+			Registeration
+		</div>
+
+		<div class="col-xs-12">
+			<div class="row">
+				You have completed your registeration. You can login <a href="/login">here</a>.
+			</div>
+		</div>
+		@endif
+		
 	</div>
 </section>
 

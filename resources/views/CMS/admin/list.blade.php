@@ -7,6 +7,7 @@
 			 		<input type="file" name="files[]" multiple="multiple" title="Click to add Files">
 				</div>
 				<div class="import-list-log" style="display: none"></div>
+				<a href="/admin/export/sample"><button>Sample</button></a>
 			</div>
 		</div>
 

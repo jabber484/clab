@@ -19,11 +19,14 @@ Route::group(['middleware' => ['user']], function () {
 	Route::get('/book/success', 'PageController@BookingDone');
 	Route::post('/booking/create', 'BookingController@newBooking');
 
-	Route::get('/admin', 'PageController@admin');
-	Route::post('/admin/import/list', 'AdminController@importList');
-	Route::get('/admin/export/list', 'AdminController@exportList');
-
 	Route::get('/logout', 'AuthController@logout');
+
+	Route::group(['middleware' => ['admin']], function () {
+		Route::get('/admin', 'PageController@admin');
+		Route::post('/admin/import/list', 'AdminController@importList');
+		Route::get('/admin/export/list', 'AdminController@exportList');
+		Route::get('/admin/export/sample', 'AdminController@exportSample');
+	});
 });
 
 Route::get('/', 'PageController@landing');
@@ -43,4 +46,6 @@ Route::get('/project', 'PageController@project');
 
 
 Route::get('/login', 'PageController@login');
+Route::get('/register', 'PageController@register');
+Route::get('/register/new', 'AdminController@register');
 Route::post('/auth', 'AuthController@login');
