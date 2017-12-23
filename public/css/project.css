@@ -103,6 +103,7 @@ a.readmore, a.readless {
     height: 160px;
 }
 .project-des {
+    margin: 0 12px;
     margin-top: 8px;
 }
 @media screen and (max-width: 767px) {

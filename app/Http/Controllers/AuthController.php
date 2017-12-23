@@ -23,13 +23,13 @@ class AuthController extends Controller
         
         if($result){
             $request->session()->put('auth',"1");
-            session(['sid' => '');
 
             return redirect('/');
         }
 
         //0 -> no match
         
+        $request->session()->put('sid',"");
         $request->session()->put('auth',"0");
         return view("gateway")->with("error","0");
     }

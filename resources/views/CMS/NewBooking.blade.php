@@ -32,18 +32,18 @@
 								<div class="subtitle">From</div>
 								<div class="field">
 									<select id="fYear">
-										@for ($i = 2016; $i <= 2047; $i++)
+										@for ($i = $year; $i <= 2047; $i++)
 										<option value="{{$i}}">{{$i}}</option>
 										@endfor
 									</select>
 									<select id="fMonth">
 										@for ($i = 1; $i <= 12; $i++)
-										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										<option @if($i == $month) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 										@endfor
 									</select>
 									<select id="fDay">
 										@for ($i = 1; $i <= 31; $i++)
-										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										<option @if($i == $day) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 										@endfor
 									</select>
 								</div>
@@ -54,18 +54,18 @@
 								<div class="subtitle">To</div>
 								<div class="field">
 									<select id="tYear">
-										@for ($i = 2016; $i <= 2047; $i++)
+										@for ($i = $year; $i <= 2047; $i++)
 										<option value="{{$i}}">{{$i}}</option>
 										@endfor
 									</select>
 									<select id="tMonth">
 										@for ($i = 1; $i <= 12; $i++)
-										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										<option @if($i == $month) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 										@endfor
 									</select>
 									<select id="tDay">
 										@for ($i = 1; $i <= 31; $i++)
-										<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+										<option @if($i == $day) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 										@endfor
 									</select>
 								</div>
@@ -181,13 +181,18 @@ $(function(){
 			var result = xhr;
 
 			if(result['success']){
-
+				alert("Booking was perfromed!");
+				window.location.replace("/book/success");
 			} else {
-				var message = "The following item is not avalibale during you submitted period:\n";
-				$.each(result['item_NA_des'], function(key,item){
-					message = message + item['description'] + ": not avalible till " + item['to'];
-				});
-				alert(message);
+				if(result['code'] == 0){
+					var message = "The following item is not avalibale during you submitted period:\n";
+					$.each(result['item_NA_des'], function(key,item){
+						message = message + item['name'] + ": not avalible till " + item['to'];
+					});
+					alert(message);
+				} else if (result['code'] == 1){
+					alert(result['message']);
+				}
 			}
 		});
 

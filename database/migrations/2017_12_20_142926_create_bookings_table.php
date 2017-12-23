@@ -15,9 +15,10 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id')->unique();
+            $table->integer('booking_id');
             $table->integer('sid')->references('sid')->on('users');
             $table->integer('item_id')->references('id')->on('catalogs');
-            $table->date('form');
+            $table->date('from');
             $table->date('to');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@ Route::group(['middleware' => ['user']], function () {
 
 	Route::get('/book/new', 'PageController@newBooking');
 	Route::get('/book/new/{id}', 'PageController@newBooking');
+	Route::get('/book/success', 'PageController@BookingDone');
 	Route::post('/booking/create', 'BookingController@newBooking');
 
 

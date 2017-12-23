@@ -54,7 +54,18 @@ class PageController extends Controller
             unset($payload[$key]);
         }
 
-        return view('CMS.NewBooking')->with('payload',$payload)->with('onBooking',1)->with('prescripted',$id == null? 'X' : $id);
+        return view('CMS.NewBooking')
+                ->with('payload',$payload)
+                ->with('onBooking',1)
+                ->with('prescripted',$id == null? 'X' : $id)
+                ->with('year', \Carbon\Carbon::now()->year)
+                ->with('month', \Carbon\Carbon::now()->month)
+                ->with('day', \Carbon\Carbon::now()->day);
+    }
+
+    public function BookingDone(){
+        
+        return view('CMS.NewBooking_success');
     }
 
     public function getCatalog(){
