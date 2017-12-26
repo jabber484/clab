@@ -12,6 +12,7 @@
 		</div>
 
 		@include('CMS.admin.list')
+		@include('CMS.admin.promote')
 	</div>
 </section>
 
