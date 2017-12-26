@@ -90,9 +90,11 @@ class AdminController extends Controller
     public function exportSample(Request $request){
         Excel::create('server_user_list_sample', function($excel){
             $excel->sheet('user', function($sheet) {
-                $sheet->fromArray(
-                    array("sid","role")
-                );
+                $sheet->fromArray(array(
+                    array("sid","role","email"),
+                    array("1155078888","student","1155078888@link.cuhk.edu.hk"),
+                    array("1155078889","admin","1155078889@link.cuhk.edu.hk"),
+                ),null,'A1',false,false);
             });
         })->download('xlsx');
     }

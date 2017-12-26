@@ -50,3 +50,5 @@ Route::get('/login', 'PageController@login');
 Route::get('/register', 'PageController@register');
 Route::get('/register/new', 'AdminController@register');
 Route::post('/auth', 'AuthController@login');
+
+Route::get('/mailtest', 'BookingController@mail');

@@ -29,7 +29,7 @@
 			<div class="field">
 				<select id="cat" name="cat">
 					@foreach($type as $id => $name)
-					<option value="{{$id+1}}">{{$name['name']}}</option>
+					<option value="{{$name['id']}}">{{$name['name']}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -184,7 +184,7 @@ $('.submit-btn').click(function(){
 		alert("Please wait for image to be uploaded.")
 	}
 	$.post("/project/new/post" ,
-		{ title : $('#cat').val(),
+		{ title : $('#title').val(),
 		  cat : $('#cat').val(), 
 		  Idea: $('#idea:checked').val() == 1 ? 1 : 0,
 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),

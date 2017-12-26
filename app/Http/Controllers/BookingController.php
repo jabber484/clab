@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use App\booking;
 use Carbon\carbon;
 
@@ -67,6 +68,16 @@ class BookingController extends Controller
 
     	}
 
+        if($this->message['success']){
+            $data = array(
+                "name" => $this->user,
+                "booking" => json_decode($request->item),
+                "from" => $this->from->toDateString(),
+                "to" => $this->to->toDateString(),
+            );
+
+            $this->mail($data);
+        }
     	return $this->message;
     }
 
@@ -83,5 +94,14 @@ class BookingController extends Controller
         }
 
         return $result;
+    }
+
+    public function mail($data = array()){
+        $data['item'] = DB::table('catalogs')->select('name')->whereIn('id',$data['booking'])->get()->toArray();
+        $email = DB::table('users')->select('email')->where('sid','1155078921')->get()->toArray()[0]->email;
+
+        Mail::send('email.confirmation', $data, function($message) {
+            $message->to($email)->subject('c!ab Booking Confirmation');
+        });
     }
 }

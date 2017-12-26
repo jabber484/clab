@@ -15,7 +15,7 @@
 
 		<div class="col-xs-12">
 			<div class="row">
-				You have completed your booking.
+				You have completed your booking.<br>Please refer to you confirmation email in your registered e-mail address.
 			</div>
 		</div>
 		@elseif($from == "register")

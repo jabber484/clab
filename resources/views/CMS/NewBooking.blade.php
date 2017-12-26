@@ -189,7 +189,7 @@ $(function(){
 			var result = xhr;
 
 			if(result['success']){
-				alert("Booking was perfromed!");
+				// alert("Booking was perfromed!");
 				window.location.replace("/book/success");
 			} else {
 				if(result['code'] == 0){
