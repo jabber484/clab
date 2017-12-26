@@ -14,7 +14,7 @@ class project extends Model
     	$data = $this->where('id',$id)->first()->toArray();
 
     	$data['streamNum'] = $data['type'];
-        $data['type'] = $type[$data['streamNum']][0]['name'];
+        $data['type'] = $type[$data['streamNum']-1]['name'];
 
     	return $data;
     }
@@ -27,7 +27,7 @@ class project extends Model
 
     	foreach ($data as $key => $value) {
 			$data[$key]['streamNum'] = $value['type'];
-			$data[$key]['type'] = $type[$data[$key]['streamNum']][0]['name'];
+			$data[$key]['type'] = $type[$data[$key]['streamNum']-1]['name'];
     	}
     
     	return $data;
@@ -41,7 +41,7 @@ class project extends Model
 
     	foreach ($data as $key => $value) {
 			$data[$key]['streamNum'] = $value['type'];
-			$data[$key]['type'] = $type[$data[$key]['streamNum']][0]['name'];
+			$data[$key]['type'] = $type[$data[$key]['streamNum']-1]['name'];
     	}
     
     	return $data;

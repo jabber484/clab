@@ -2,6 +2,8 @@
 
 <script type="text/javascript">
 $('#calendar').fullCalendar({
+	allDayDefault: true,
+	events: "/catalogue/booking",
     header: {
     	left:   'prev,next',
 	    center: '',

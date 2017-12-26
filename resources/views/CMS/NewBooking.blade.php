@@ -73,8 +73,12 @@
 						</div>
 					</div>
 
-					<div class="field submit-btn submit-btn-catalog">
-						<button class="btn btn-success">Submit</button>
+					<div class="field submit-btn submit-btn-catalog btn-sub">
+						<button class="btn btn-success btn-sub">Submit</button>
+						<button style="display: none" type="button" class="btn btn-success btn-loading">Loading...</button>
+					</div>
+					<div class="field submit-btn-catalog btn-loading" style="display: none">
+						<button type="button" class="btn btn-success ">Loading...</button>
 					</div>
 					
 					<div class="field">
@@ -155,8 +159,10 @@ $(function(){
 
 	$('.submit-btn').click(function(){
 		//validate....
-
-
+		
+		$(".btn-loading").show();
+		$(".btn-sub").hide();
+		// return;
 		var final_cart = [];
 		$.each(cart, function(key,value){
 			if(value != "X"){
@@ -165,6 +171,8 @@ $(function(){
 		});
 		if(final_cart.length == 0){
 			alert("No item in kart!")
+			$(".btn-sub").show();
+			$(".btn-loading").hide();
 			return false; 
 		}
 
@@ -187,15 +195,16 @@ $(function(){
 				if(result['code'] == 0){
 					var message = "The following item is not avalibale during you submitted period:\n";
 					$.each(result['item_NA_des'], function(key,item){
-						message = message + item['name'] + ": not avalible till " + item['to'];
+						message = message + item['name'] + ": not avalible till " + item['to'] + "\n";
 					});
 					alert(message);
 				} else if (result['code'] == 1){
 					alert(result['message']);
 				}
 			}
+			$(".btn-sub").show();
+			$(".btn-loading").hide();
 		});
-
 	});
 });
 

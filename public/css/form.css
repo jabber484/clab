@@ -9,7 +9,7 @@
 .field {
 	margin: 8px 0;
 }
-.submit-btn {
+.submit-btn, .btn-loading{
 	text-align: center;
     margin-bottom: 16px;
 }

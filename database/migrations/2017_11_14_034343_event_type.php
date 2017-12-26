@@ -16,6 +16,7 @@ class EventType extends Migration
         Schema::create('event_types', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name');
+            $table->boolean('admin_only');
             $table->timestamps();
         });
     }

@@ -49,7 +49,10 @@ class PageController extends Controller
         $event = new event_type();
         $type = $event->getAll();
 
-        return view('CMS.NewProject',compact('type'));
+        return view('CMS.NewProject',compact('type'))
+                ->with('year', \Carbon\Carbon::now()->year)
+                ->with('month', \Carbon\Carbon::now()->month)
+                ->with('day', \Carbon\Carbon::now()->day);
     }
 
     public function newBooking($id = null){

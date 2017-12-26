@@ -29,9 +29,9 @@ class AuthController extends Controller
 
         //0 -> no match
         
-        $request->session()->put('sid',"");
+        $request->session()->forget('sid');
+        $request->session()->forget('role');
         $request->session()->put('auth',"0");
-        $request->session()->put('role',"");
         return view("gateway")->with("error","0");
     }
 
@@ -39,6 +39,8 @@ class AuthController extends Controller
         // $this->user->setAuth(0);
         $this->user = null;
 
+        $request->session()->forget('sid');
+        $request->session()->forget('role');
         $request->session()->put('auth',"0");
         return redirect('/');
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\booking;
 use Carbon\carbon;
 
@@ -22,13 +23,14 @@ class BookingController extends Controller
     	$this->message['success'] = false;   
         $this->message['code'] = 0;   //0 -> invalid item | 1 -> invaild time | 2 -> invaild sid
     	$this->message['message'] = "";   
-
-        $this->time = new Carbon();
-        $this->from = Carbon::createFromFormat('Y-m-d', $request->from);
-        $this->to = Carbon::createFromFormat('Y-m-d', $request->to);
     }
 
     public function newBooking(Request $request){
+        //set time
+        $this->time = new Carbon();
+        $this->from = Carbon::createFromFormat('Y-m-d', $request->from);
+        $this->to = Carbon::createFromFormat('Y-m-d', $request->to);
+
 		if(!$request->session()->has('sid') || $request->session()->get('sid') == ''){ //safeguard
             $this->message['code'] = 2;   
             $this->message['message'] = "Invalid Sid";   
@@ -66,5 +68,20 @@ class BookingController extends Controller
     	}
 
     	return $this->message;
+    }
+
+    public function getBookingForCalender(Request $request){
+        $result = DB::table('bookings')
+            ->join("catalogs", 'catalogs.id', '=', 'bookings.item_id')
+            ->select('name AS title','from AS start', "to As end")
+            ->get()->toArray();
+
+        //handle end date...
+        foreach ($result as $key => $entry) {
+            $newEnd = Carbon::createFromFormat('Y-m-d', $entry->end)->addDay(1);
+            $result[$key]->end = $newEnd->toDateString();
+        }
+
+        return $result;
     }
 }

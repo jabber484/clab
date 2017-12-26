@@ -32,6 +32,7 @@ Route::group(['middleware' => ['user']], function () {
 Route::get('/', 'PageController@landing');
 
 Route::get('/catalogue', 'PageController@getCatalog');
+Route::get('/catalogue/booking', 'BookingController@getBookingForCalender');
 
 Route::get('/about', 'PageController@about');
 

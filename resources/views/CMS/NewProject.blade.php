@@ -12,6 +12,12 @@
 		</div>
 
 		<div class="col-xs-12">
+			<div class="subtitle">Note</div>
+			<div class="field">
+				All fields are required unless specified.
+			</div>
+
+
 			{{-- Title --}}
 			<div class="subtitle">Title</div>
 			<div class="field">
@@ -23,7 +29,7 @@
 			<div class="field">
 				<select id="cat" name="cat">
 					@foreach($type as $id => $name)
-					<option value="{{$id}}">{{$name[0]['name']}}</option>
+					<option value="{{$id+1}}">{{$name['name']}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -42,18 +48,18 @@
 					<div class="subtitle">From</div>
 					<div class="field">
 						<select id="fYear">
-							@for ($i = 2016; $i <= 2047; $i++)
+							@for ($i = $year; $i <= 2047; $i++)
 							<option value="{{$i}}">{{$i}}</option>
 							@endfor
 						</select>
 						<select id="fMonth">
 							@for ($i = 1; $i <= 12; $i++)
-							<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+							<option @if($i == $month) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 							@endfor
 						</select>
 						<select id="fDay">
 							@for ($i = 1; $i <= 31; $i++)
-							<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+							<option @if($i == $day) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 							@endfor
 						</select>
 					</div>
@@ -64,18 +70,18 @@
 					<div class="subtitle">To</div>
 					<div class="field">
 						<select id="tYear">
-							@for ($i = 2016; $i <= 2047; $i++)
+							@for ($i = $year; $i <= 2047; $i++)
 							<option value="{{$i}}">{{$i}}</option>
 							@endfor
 						</select>
 						<select id="tMonth">
 							@for ($i = 1; $i <= 12; $i++)
-							<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+							<option @if($i == $month) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 							@endfor
 						</select>
 						<select id="tDay">
 							@for ($i = 1; $i <= 31; $i++)
-							<option value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
+							<option @if($i == $day) selected @endif value="{{$i<10?'0'.$i:$i}}">{{$i<10?'0'.$i:$i}}</option>
 							@endfor
 						</select>
 					</div>
@@ -83,7 +89,7 @@
 			</div>
 			
 			{{-- Image --}}
-			<div class="subtitle">Photo</div>
+			<div class="subtitle">Poster/Promotional Image (Optional)</div>
 			<div class="field">
 				<div class="cover-wrapper">
 			 		<input type="file" name="files[]" multiple="multiple" title="Click to add Files">
@@ -174,14 +180,13 @@ $('textarea2').froalaEditor({
 });
 
 $('.submit-btn').click(function(){
-
 	if (uploading == 1){
 		alert("Please wait for image to be uploaded.")
 	}
 	$.post("/project/new/post" ,
 		{ title : $('#cat').val(),
 		  cat : $('#cat').val(), 
-		  Idea: $('#idea').html() == 1 ? 1 : 0,
+		  Idea: $('#idea:checked').val() == 1 ? 1 : 0,
 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
 		  picture : path, 
@@ -195,8 +200,14 @@ $('.submit-btn').click(function(){
 	    console.log(xhr.responseText);
 	    console.log(thrownError);
 	    console.log('Ajax Error');
+	    alert('Error: check your content');
 	}).done(function(xhr, ajaxOptions, thrownError) {
-		window.location.replace("/project/"+xhr);
+		var result = xhr;
+		if(result['success'] == true){
+			window.location.replace("/project/"+result['id']);
+		} else {
+			alert(result['message']);
+		}
 	});
 });
 

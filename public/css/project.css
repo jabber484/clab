@@ -16,7 +16,7 @@ a.readmore, a.readless {
     color: grey;
 }
 .btn-new {
-    border-radius: 16px;
+    /* border-radius: 16px; */
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;

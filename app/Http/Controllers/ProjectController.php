@@ -5,11 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\project;
+use Carbon\carbon;
 use Image;
 
 class ProjectController extends Controller
 {	
+	private $message;
+
+    private $time;
+    private $from;
+    private $to;
+
+
+	public function __construct(Request $request)
+    {
+    	$this->message = array();
+    	$this->message['success'] = false;   
+        $this->message['code'] = 0;
+    	$this->message['message'] = "";   
+    }
+
 	public function newProject(Request $request){
+        //set time		
+        $this->time = new Carbon();
+        $this->from = Carbon::createFromFormat('Y-m-d', $request->fDate);
+        $this->to = Carbon::createFromFormat('Y-m-d', $request->tDate);
+
+		if(!$request->session()->has('sid') || $request->session()->get('sid') == ''){ //safeguard
+            $this->message['code'] = 2;   
+            $this->message['message'] = "Invalid Sid";   
+    		return $this->message;
+        } else if ($request->Idea != 1 && ($this->time->gt($this->from) || $this->time->gt($this->to) || $this->to->lt($this->from))){
+            $this->message['code'] = 1;   
+            $this->message['message'] = "Invalid Booking Time Period";   
+            return $this->message; 
+        }
+
     	$project= new project();
 
     	$project->name = $request->title;
@@ -26,9 +57,9 @@ class ProjectController extends Controller
 		$project->contact = $request->contact;
 
 		$project->save();
-
-
-    	return $project->id;
+		$this->message['success'] = true;   
+		$this->message['id'] = $project->id;   
+    	return $this->message;
     }
     
     public function newProjectImage(Request $request){

@@ -12,6 +12,10 @@
 		@else
 		Logged in as {{Session::get('sid')}}. <a href="/logout">Logout Here.</a>
 		@endif
+
+		@if(Session::has('role') && Session::get('role') == "admin")
+		<br>Click <a href="/admin">here</a> for Admin Session.
+		@endif
 	</div>
 </section>
 
@@ -44,7 +48,7 @@
 <section class="calendar-sec">
 	<div class="container">
 		<div class="col-xs-12">
-			<div class="content-title">Event Calendar</div>
+			<div class="content-title">Booking Calendar</div>
 		</div>
 		<div class="col-xs-12 calendar">
 			@include("parts.calendar")
