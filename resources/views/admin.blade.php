@@ -13,6 +13,8 @@
 
 		@include('CMS.admin.list')
 		@include('CMS.admin.promote')
+		@include('CMS.admin.email')
+		{{-- @include('CMS.admin.catalog') --}}
 	</div>
 </section>
 

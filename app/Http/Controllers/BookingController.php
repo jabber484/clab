@@ -56,12 +56,13 @@ class BookingController extends Controller
     		$this->message['success'] = true;   
     		$this->message['code'] = "OK";  
             $data = array();
+            $num = $booking->getAvalibleBookingID();
             foreach (json_decode($request->item) as $key => $id) {
                 $data[] = array(
                     "sid" => $this->user,
                     "from" => $this->from,
                     "to" => $this->to,
-                    "booking_id" => $booking->getAvalibleBookingID(),
+                    "booking_id" => $num,
                     "item_id" => $id,
                     "created_at" =>  \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now(),
@@ -76,11 +77,12 @@ class BookingController extends Controller
             $data = array(
                 "name" => $this->user,
                 "booking" => json_decode($request->item),
+                "booking_id" => $num,
                 "from" => $this->from->toDateString(),
                 "to" => $this->to->toDateString(),
             );
 
-            $this->mail($data);
+            $this->mailMaster($data);
         }
     	return $this->message;
     }
@@ -89,6 +91,7 @@ class BookingController extends Controller
         $result = DB::table('bookings')
             ->join("catalogs", 'catalogs.id', '=', 'bookings.item_id')
             ->select('name AS title','from AS start', "to As end")
+            ->where('pending', '0')
             ->get()->toArray();
 
         //handle end date...
@@ -100,10 +103,29 @@ class BookingController extends Controller
         return $result;
     }
 
+    private function mailMaster($data = array()){
+        $data['item'] = DB::table('catalogs')->select('name')->whereIn('id',$data['booking'])->get()->toArray();
+        $email = DB::table('masterEmail')->select('email')->get()->toArray();
+
+        Mail::send('email.approval', $data, function($message) use ($email) {
+            foreach ($email as $address) 
+                $message->to($address->email)->subject('[c!ab] Pending Approval for facilities and/or equipment booking');
+        });
+    }
+
+    public function approve(Request $request, $id){
+        if(!$request->has('app') || $request->app != 1)
+            return redirect('/');
+
+        DB::table('bookings')->where('booking_id', $id)->update(['pending' => 0]);
+
+        return view('success_response')->with('from','approve');
+    }
+
     public function mail($data = array()){
         $data['item'] = DB::table('catalogs')->select('name')->whereIn('id',$data['booking'])->get()->toArray();
         $email = DB::table('users')->select('email')->where('sid','1155078921')->get()->toArray()[0]->email;
-        // return view('email.confirmation',$data);
+        
         Mail::send('email.confirmation', $data, function($message) use ($email) {
             $message->to($email)->subject('[c!ab] Confirmation e-mail for facilities and/or equipment booking');
         });

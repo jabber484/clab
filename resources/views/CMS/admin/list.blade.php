@@ -48,6 +48,12 @@ $(function(){
 			$(".import-list-log").html("Uploaded, inserted " + data['inserted'] + " record(s).");
 			uploading = 0;
 		},
+		onUploadError: function(id, message){
+			$(".import-list").hide();
+			$(".import-list-log").show();
+			$(".import-list-log").empty();
+			$(".import-list-log").html("Upload Error: Check your list");
+		},
 		maxFiles: 1,
 	});
 });

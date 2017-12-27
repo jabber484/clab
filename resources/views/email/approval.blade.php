@@ -12,9 +12,9 @@
 </head>
 
 <body>
-	<div>Dear Student,</div>
+	<div>Dear Admin,</div>
 	 <br>
-	<div>Your booking for the following equipment is confirmed:</div>
+	<div>User {{$name}} booked the following item:</div>
 	<br>
 	<table>
 		<tr>
@@ -36,7 +36,8 @@
 	</table>
 	<br>
 
-	<div>Please note the following:-</div>
+	<div>Apporve the booking <a href="/approve/{{$booking_id}}?app=1">here</a> to show it on calendar.</div>
+{{-- 	<div>Please note the following:-</div>
 	<ol>
 	<li>Please bring along your Student ID for identity verification and collect the above item in the Dean of Student Office (UG/F, East Block) at the above scheduled time.</li>
 	<li>You are required to pay a deposit of HK$100 for every single item check-out. Should the booking be marked as a SET, you’re required to pay a deposit of HK$500 for each set. Reserved items will be released to other users if they are not checked out before the specified time.</li>
@@ -46,7 +47,7 @@
 	<li>Please return the loan item(s) punctually to the College Office (G03, G/F, East Wing) and take good care of the equipment. The deposit can be refunded once you’ve returned of loan item(s) as the condition it was rented out.</li>
 	</ol>
 	<br>
-	<div>If you have any questions about how to use the equipment, please feel free to ask the student conveners/ staff. Thank you!</div>
+	<div>If you have any questions about how to use the equipment, please feel free to ask the student conveners/ staff. Thank you!</div> --}}
 
 </body>
 </html>

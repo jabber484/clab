@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBookingsTable extends Migration
+class MasterEmail extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
+        Schema::create('masterEmail', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->integer('booking_id');
-            $table->integer('sid')->references('sid')->on('users');
-            $table->integer('item_id')->references('id')->on('catalogs');
-            $table->date('from');
-            $table->date('to');
-            $table->boolean('pending')->default(1);
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::dropIfExists('masterEmail');
     }
 }

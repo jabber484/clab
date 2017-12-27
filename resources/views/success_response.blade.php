@@ -15,7 +15,8 @@
 
 		<div class="col-xs-12">
 			<div class="row">
-				You have completed your booking.<br>Please refer to you confirmation email in your registered e-mail address.
+				c!ab student conveners and/or staff will contact you shortly to verify the details of your booking. 
+				<br>A confirmation e-mail will be sent to you once the booking is approved.
 			</div>
 		</div>
 		@elseif($from == "register")
@@ -26,6 +27,16 @@
 		<div class="col-xs-12">
 			<div class="row">
 				You have completed your registeration. You can login <a href="/login">here</a>.
+			</div>
+		</div>
+		@elseif($from == "approve")
+		<div class="content-title">
+			Booking Approval
+		</div>
+
+		<div class="col-xs-12">
+			<div class="row">
+				The Booking has been approved. It will be shown on calendar.
 			</div>
 		</div>
 		@endif

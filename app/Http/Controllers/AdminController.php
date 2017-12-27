@@ -61,6 +61,7 @@ class AdminController extends Controller
         	$data[] = array(
                 "sid" => $entry->sid,
                 "role" => $entry->role,
+                "email" => $entry->email,
                 "created_at" =>  \Carbon\Carbon::now(),
                 "updated_at" => \Carbon\Carbon::now(),
             );
@@ -97,5 +98,66 @@ class AdminController extends Controller
                 ),null,'A1',false,false);
             });
         })->download('xlsx');
+    }
+
+    public function promote(Request $request){
+        $message = array(
+            "success" => false,
+            "message" => ""
+        );
+        $sid = $request->sid;
+
+        if(DB::table('users')->where('sid',$sid)->count() == 0){
+            $message['message'] = "User doesn't exist";
+            return $message;
+        }
+        DB::table('users')->where('sid',$sid)->update(['role' => 'admin']);
+
+        $message['success'] = true;
+        $message['message'] = "Promoted ".$sid." to admin status";
+        return $message;
+    }
+
+    public function demote(Request $request){
+        $message = array(
+            "success" => false,
+            "message" => ""
+        );
+        $sid = $request->sid;
+
+        if(DB::table('users')->where('sid',$sid)->count() == 0){
+            $message['message'] = "User doesn't exist";
+            return $message;
+        }
+        DB::table('users')->where('sid',$sid)->update(['role' => 'student']);
+
+        $message['success'] = true;
+        $message['message'] = "Promoted ".$sid." to student status";
+        return $message;
+    }
+
+    public function email(Request $request, $type){
+        if(!$request->has('email'))
+            return "No Email Submitted";
+
+        if($type == "add"){
+            DB::table('masterEmail')->insert([
+                [
+                    'email' => $request->email, 
+                    // "created_at" =>  \Carbon\Carbon::now(),
+                    // "updated_at" => \Carbon\Carbon::now()
+                ],
+            ]);
+
+            return "Added ".$request->email." to admin email list.";
+        } else if($type == "delete"){
+            if(DB::table('masterEmail')->where('email',$request->email)->count() == 0){
+                return "Email doesn't exist";
+            }
+            
+            DB::table('masterEmail')->where('email', $request->email)->delete();
+            return "deleted ".$request->email." from admin email list.";
+        }
+
     }
 }
