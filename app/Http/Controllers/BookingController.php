@@ -40,6 +40,10 @@ class BookingController extends Controller
             $this->message['code'] = 1;   
             $this->message['message'] = "Invalid Booking Time Period";   
             return $this->message; 
+        } else if ($this->to->diffInDays($this->from) > 4){
+            $this->message['code'] = 1;   
+            $this->message['message'] = "Error: Equipment can be loan for not more than five days.";   
+            return $this->message; 
         }
 		$this->user = $request->session()->get('sid');
 
@@ -99,9 +103,9 @@ class BookingController extends Controller
     public function mail($data = array()){
         $data['item'] = DB::table('catalogs')->select('name')->whereIn('id',$data['booking'])->get()->toArray();
         $email = DB::table('users')->select('email')->where('sid','1155078921')->get()->toArray()[0]->email;
-
-        Mail::send('email.confirmation', $data, function($message) {
-            $message->to($email)->subject('c!ab Booking Confirmation');
+        // return view('email.confirmation',$data);
+        Mail::send('email.confirmation', $data, function($message) use ($email) {
+            $message->to($email)->subject('[c!ab] Confirmation e-mail for facilities and/or equipment booking');
         });
     }
 }

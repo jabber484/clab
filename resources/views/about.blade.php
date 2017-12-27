@@ -12,15 +12,14 @@
 		</div>
 		<div class="col-xs-12">
 			<div class="about-content">
-				<div>	
-					Creativity Laboratory of Wu Yee Sun College, The Chinese University of Hong Kong (CUHK), is an intellectual playground for our students to explore ideas across disciplines, to express their curiosity, to put fun and joy back to their learning.
-				</div>
-				<div>	
-					It is also a place where ideas gather, and actions taken. Since launching in September 2014, Creativity Laboratory has enabled Idea/Action Owners to launch Idea/Action from all around CUHK, find your teammates and ask for help for your Action. Through this platform, every crazy idea in your mind can be realized and every crazy student in CUHK can gather together.
-				</div>
-				<div>	
-					Enjoy!
-				</div>
+				<div>Creativity Laboratory (c!ab) is the first of its kind in CUHK dedicated to creativity. With the generous donation of Seeds Foundation, c!ab is now transformed into a completely new innovative playground for you to explore ideas across disciplines, to express your curiosity and to put fun and joy back to the learning. </div>
+
+				<div>With a physical space wisely planned and newly renovated, together with a list of high-end equipment, tools and books to facilitate your realization of the imagination, you are now encouraged to mess around with space at the Create Zone and you can also exchange and brainstorm the ideas at the Idea Zone. </div>
+
+				<div>c!ab is also a place where IDEAS GATHERED, and ACTION TAKEN. There’re FIVE major themes, which are Arts & Culture, Design Thinking, Entrepreneurship and Management, Science & Technology and Socio-political Innovations. You are encouraged to develop self-initiated projects with project grants and resources supported by the College. Just post your idea on our website and grab the support from our management committee and student conveners. </div>
+
+				<div>With 24-hour operation, c!ab is an ideal place for you to unleash your creativity and transform your vision into reality. Just come and join us!</div>
+
 			</div>
 		</div>
 
@@ -36,7 +35,7 @@
 					Email   : clab.wys@cuhk.edu.hk
 				</div>
 				<div>	
-					Address : G03, G/F, College Office, Wu Yee Sun College, The Chinese University of Hong Kong, Shatin, Hong Kong
+					Address : UG, East Block, Wu Yee Sun College, The Chinese University of Hong Kong, Shatin, Hong Kong
 				</div>
 				<div>	
 					Enjoy!
