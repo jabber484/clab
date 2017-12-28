@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
-use Excel;
-use App\user;
-use App\login;
-use Image;
 use App\catalog;
+use App\login;
+use App\project;
+use App\user;
+use Excel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class AdminController extends Controller
 {
@@ -203,5 +204,32 @@ class AdminController extends Controller
             return "Added Item";
         }
 
+    }
+
+    public function xxx(Request $request){
+        $data = json_decode($request->data);
+        $project= new project();
+
+        $project->name = $data->title;
+        $project->type = 6;
+        $project->isIdea = 1;
+        $project->fromDate = null;
+        $project->toDate = null;
+        $project->picture = "asset/clablogo.svg";
+        $project->thumbnail = "asset/clablogo.svg";
+        $project->short_des = $data->content;
+        $project->description = $data->content;
+        $project->sid = '523';
+        $project->alias = $data->creator;
+        $project->contact = " ";
+
+        $project->save();
+
+        return $request->all();
+    }
+
+    public function xxxRender(Request $request){
+
+        return view("xxx");
     }
 }

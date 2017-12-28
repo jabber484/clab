@@ -13,4 +13,8 @@ class event_type extends Model
     		return $this->where('admin_only','0')->get()->toArray();
     	}
     }
+
+    public function getAllDisplay(){
+		return $this->all()->toArray();
+    }
 }

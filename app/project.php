@@ -10,7 +10,7 @@ class project extends Model
     public function getById($id){
         $event = new event_type();
 
-    	$type = $event->getAll();
+    	$type = $event->getAllDisplay();
     	$data = $this->where('id',$id)->first()->toArray();
 
     	$data['streamNum'] = $data['type'];
@@ -22,7 +22,7 @@ class project extends Model
     public function getLatest($number){
         $event = new event_type();
 
-    	$type = $event->getAll();
+    	$type = $event->getAllDisplay();
     	$data = $this->all()->reverse()->take($number)->toArray();
 
     	foreach ($data as $key => $value) {
@@ -36,7 +36,7 @@ class project extends Model
     public function getAll(){
         $event = new event_type();
 
-    	$type = $event->getAll();
+    	$type = $event->getAllDisplay();
     	$data = $this->all()->reverse()->toArray();
 
     	foreach ($data as $key => $value) {

@@ -58,3 +58,5 @@ Route::post('/auth', 'AuthController@login');
 // Route::get('/mailtest', 'BookingController@mail');
 Route::get('/approve/{id}', 'BookingController@approve');
 
+// Route::post('/xxx', 'AdminController@xxx');
+// Route::get('/xxx', 'AdminController@xxxRender');
