@@ -141,7 +141,7 @@
 
 
 <script>
-var path = null;
+var path = "asset/clablogo.svg";
 var name;
 var uploading = 0;
 

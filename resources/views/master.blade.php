@@ -119,11 +119,6 @@
 		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		    }
 		});
-		$(function(){
-			$( "img" ).error(function() {
-			    $( this ).attr( "src", "{{asset('asset/clablogo.svg')}}" );
-		  	})
-		});
 	</script>
 </body>
 </html>

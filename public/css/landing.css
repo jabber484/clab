@@ -187,7 +187,7 @@ button.fc-corner-right, button.fc-corner-left {
     right: 32px;
 }
 .project-img {
-    background: grey;
+    background: #7e7e7e;
     height: 200px;
     overflow: hidden;
     position: relative;
