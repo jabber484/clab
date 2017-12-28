@@ -36,7 +36,7 @@
 	</table>
 	<br>
 
-	<div>Apporve the booking <a href="/approve/{{$booking_id}}?app=1">here</a> to show it on calendar.</div>
+	<div>Apporve the booking <a href="http://52.68.174.122/approve/{{$booking_id}}?app=1">here</a> to show it on calendar.</div>
 {{-- 	<div>Please note the following:-</div>
 	<ol>
 	<li>Please bring along your Student ID for identity verification and collect the above item in the Dean of Student Office (UG/F, East Block) at the above scheduled time.</li>
