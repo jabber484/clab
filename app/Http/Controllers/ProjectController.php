@@ -41,7 +41,7 @@ class ProjectController extends Controller
             return $this->message; 
         } else if(!$request->session()->has(['title','short','full','alias','contact'])){
             $this->message['code'] = 3;   
-            $this->message['message'] = "Require field must be filled";   
+            $this->message['message'] = "Required fields must be filled";   
             return $this->message; 
         }
 
