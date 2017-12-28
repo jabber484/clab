@@ -27,7 +27,7 @@
 			    	@if($data['alias'] != NULL && $data['contact'] != NULL)
 					<div class="contact-content">
 						{{-- <div class="container-fluid"> --}}
-							Contact Project Creator:<br>
+							<b>Contact Project Creator:</b><br>
 							{{$data['alias']}}<br>
 							{{$data['contact']}}
 						{{-- </div> --}}
