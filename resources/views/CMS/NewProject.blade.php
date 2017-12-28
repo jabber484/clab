@@ -203,7 +203,7 @@ $('.submit-btn').click(function(){
 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
 		  picture : path, 
-		  short : editor2.getText(), 
+		  short : editor.getText(), 
 		  full : $('#editor2 .ql-editor').html(), 
 		  sid : {{Session::get('sid')}},
 		  alias : $('#alias').val(),
