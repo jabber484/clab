@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Excel;
 use App\user;
 use App\login;
+use Image;
+use App\catalog;
 
 class AdminController extends Controller
 {
@@ -157,6 +159,48 @@ class AdminController extends Controller
             
             DB::table('masterEmail')->where('email', $request->email)->delete();
             return "deleted ".$request->email." from admin email list.";
+        }
+
+    }
+
+    public function catalogue(Request $request, $type){
+        if($type == "type"){
+            DB::table("catalog_types")->insert([
+                [
+                    'name' => $request->type, 
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ],
+            ]);
+
+            return "Inserted ". $request->type . " into catalogue type";
+        } else if($type == "item"){
+            if(!$request->hasFile('photo'))
+                return "No photo!";
+
+            //save entry
+            $db = new catalog();
+            $db->type = $request->type;
+            $db->description = $request->description;
+            $db->name = $request->name;
+
+            $db->save();
+            $id = $db->id;
+
+            //save photo
+            $file = $request->photo;
+            $filename = $file->getClientOriginalName();
+            $ext = $file->getClientOriginalExtension();
+
+            $newname = md5(explode(".",$filename)[0].rand(1,100)).".".$ext;
+            $path = $file->storeAs('public/temp',$newname);
+            $path = str_replace("public","storage",$path);
+
+            $im = Image::make($path)->fit(120, 150);
+            $im->save('storage/catalogue/'.$id.".jpg");
+            Storage::delete($path);
+
+            return "Added Item";
         }
 
     }

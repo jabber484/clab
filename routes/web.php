@@ -29,6 +29,7 @@ Route::group(['middleware' => ['user']], function () {
 		Route::post('/admin/promote', 'AdminController@promote');
 		Route::post('/admin/demote', 'AdminController@demote');
 		Route::post('/admin/email/{type}', 'AdminController@email');
+		Route::post('/admin/catalogue/{type}', 'AdminController@catalogue');
 	});
 });
 

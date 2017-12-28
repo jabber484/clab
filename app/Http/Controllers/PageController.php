@@ -26,9 +26,13 @@ class PageController extends Controller
     }
 
     public function admin(){
-        //validate
+        //validate?
 
-        return view('admin');
+        $catalog_type = new catalog_type();
+        $catalog_type = $catalog_type->select('id','name as type')->get()->toArray();
+
+        return view('admin')
+            ->with('catalogue_type', $catalog_type);
     }
     public function register(){
 
