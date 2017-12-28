@@ -39,6 +39,10 @@ class ProjectController extends Controller
             $this->message['code'] = 1;   
             $this->message['message'] = "Invalid Booking Time Period";   
             return $this->message; 
+        } else if(!$request->session()->has(['title','short','full','alias','contact'])){
+            $this->message['code'] = 3;   
+            $this->message['message'] = "Require field must be filled";   
+            return $this->message; 
         }
 
     	$project= new project();

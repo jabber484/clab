@@ -185,6 +185,9 @@ $(function(){
 		    console.log(xhr.responseText);
 		    console.log(thrownError);
 		    console.log('Ajax Error');
+	    	alert('Error: check your content');
+		    $(".btn-sub").show();
+			$(".btn-loading").hide();
 		}).done(function(xhr, ajaxOptions, thrownError) {
 			var result = xhr;
 

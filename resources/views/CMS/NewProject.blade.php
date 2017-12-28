@@ -21,7 +21,7 @@
 			{{-- Title --}}
 			<div class="subtitle">Title</div>
 			<div class="field">
-				<input style="width: 100%;" type="text" id="title" name="title" value="" maxlength="255" class="form-text required">
+				<input required style="width: 100%;" type="text" id="title" name="title" value="" maxlength="255" class="form-text required">
 			</div>
 
 			{{-- Categories --}}
@@ -128,8 +128,11 @@
 			</div>
 			
 
-			<div class="field submit-btn">
+			<div class="field submit-btn btn-sub">
 				<button class="btn btn-success">Submit</button>
+			</div>
+			<div class="field btn-loading btn-loading" style="display: none">
+				<button type="button" class="btn btn-success ">Loading...</button>
 			</div>
 		</div>
 	</div>
@@ -190,6 +193,9 @@ $('.submit-btn').click(function(){
 		alert("Please wait for image to be uploaded.")
 	}
 
+	$(".btn-loading").show();
+	$(".btn-sub").hide();
+
 	$.post("/project/new/post" ,
 		{ title : $('#title').val(),
 		  cat : $('#cat').val(), 
@@ -208,6 +214,8 @@ $('.submit-btn').click(function(){
 	    console.log(thrownError);
 	    console.log('Ajax Error');
 	    alert('Error: check your content');
+	    $(".btn-sub").show();
+		$(".btn-loading").hide();
 	}).done(function(xhr, ajaxOptions, thrownError) {
 		var result = xhr;
 		if(result['success'] == true){
@@ -215,6 +223,9 @@ $('.submit-btn').click(function(){
 		} else {
 			alert(result['message']);
 		}
+
+		$(".btn-sub").show();
+		$(".btn-loading").hide();
 	});
 });
 
