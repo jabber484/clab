@@ -35,6 +35,12 @@
  	<link rel="stylesheet" media="print" type="text/css" href={{asset("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css")}}>
 	
 	<script src={{asset("js/dmuploader.min.js")}}></script>
+
+	{{-- <script src="//cdn.quilljs.com/1.3.4/quill.js"></script> --}}
+	<script src="//cdn.quilljs.com/1.3.4/quill.min.js"></script>
+	<link href="//cdn.quilljs.com/1.3.4/quill.core.css" rel="stylesheet">
+	<link href="//cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
+	{{-- <script src="//cdn.quilljs.com/1.3.4/quill.core.js"></script> --}}
  	
  	{{-- font --}}
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

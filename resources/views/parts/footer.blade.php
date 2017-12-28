@@ -21,6 +21,6 @@
 	        <img src="http://www.wys.cuhk.edu.hk/img/footer/footer_cuhk_03.png">
 	    </div>
 		<div class="footer-clab">Creativity Lab (c!ab) is a student organization under Wu Yee Sun College.</div>
-		<div class="credit">Developed By Johnson Ma</div>
+		{{-- <div class="credit">Developed By Johnson Ma</div> --}}
    </div>
 </div>

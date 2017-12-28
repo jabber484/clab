@@ -118,6 +118,10 @@ class BookingController extends Controller
             return redirect('/');
 
         DB::table('bookings')->where('booking_id', $id)->update(['pending' => 0]);
+        // $curry = DB::table('bookings')->select('item_id','from','to')->where('booking_id', $id)->get();
+        // $data = array(
+        //     "item" = "";
+        // );
 
         return view('success_response')->with('from','approve');
     }

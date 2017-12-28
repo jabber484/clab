@@ -100,13 +100,13 @@
 			{{-- Content --}}
 			<div class="subtitle">Short Description</div>
 			<div class="field">
-				<textarea2></textarea2>
+				<div class="editor" id="editor"></div>
 			</div>
 
 			{{-- Content --}}
 			<div class="subtitle">Full Description</div>
 			<div class="field">
-				<textarea></textarea>
+				<div class="editor" id="editor2"></div>
 			</div>
 			
 			<div class="row">
@@ -172,17 +172,24 @@ $(".cover-wrapper").dmUploader({
 	maxFiles: 1,
 });
 
-$('textarea').froalaEditor({
-	height: 300
-});
-$('textarea2').froalaEditor({
-	height: 100
-});
+var options = {
+	// debug: 'info',
+	// modules: {
+	// toolbar: '#toolbar'
+	// },
+	// placeholder: 'Compose an epic...',
+	// readOnly: true,
+	theme: 'snow'
+};
+
+var editor = new Quill('#editor',options);
+var editor2 = new Quill('#editor2',options);
 
 $('.submit-btn').click(function(){
 	if (uploading == 1){
 		alert("Please wait for image to be uploaded.")
 	}
+
 	$.post("/project/new/post" ,
 		{ title : $('#title').val(),
 		  cat : $('#cat').val(), 
@@ -190,8 +197,8 @@ $('.submit-btn').click(function(){
 		  fDate: $('#fYear').val() + '-' + $('#fMonth').val()+ '-' + $('#fDay').val(),
 		  tDate: $('#tYear').val()+ '-' + $('#tMonth').val()+ '-' + $('#tDay').val(),
 		  picture : path, 
-		  short : $('textarea2').froalaEditor('html.get'), 
-		  full : $('textarea').froalaEditor('html.get'), 
+		  short : $('#editor .ql-editor').html(), 
+		  full : $('#editor2 .ql-editor').html(), 
 		  sid : {{Session::get('sid')}},
 		  alias : $('#alias').val(),
 		  contact : $('#contact').val(),
