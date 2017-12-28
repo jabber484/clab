@@ -134,7 +134,7 @@ class AdminController extends Controller
         DB::table('users')->where('sid',$sid)->update(['role' => 'student']);
 
         $message['success'] = true;
-        $message['message'] = "Promoted ".$sid." to student status";
+        $message['message'] = "Demoted ".$sid." to student status";
         return $message;
     }
 
@@ -158,7 +158,7 @@ class AdminController extends Controller
             }
             
             DB::table('masterEmail')->where('email', $request->email)->delete();
-            return "deleted ".$request->email." from admin email list.";
+            return "Deleted ".$request->email." from admin email list.";
         }
 
     }
