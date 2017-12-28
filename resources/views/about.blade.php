@@ -42,6 +42,30 @@
 				</div>
 			</div>
 		</div>	
+
+		<div class="col-xs-12 content-title">
+			Disclaimer
+		</div>
+		<div class="col-xs-12">
+			<div class="about-content">
+				<div>The content of the Creativity Laboratory website is subject to change without notice.</div>
+				<div>Creativity Laboratory accepts no liability for any loss or damage howsoever arising from any use or misuse of or reliance on any information in this website.</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 content-title">
+			Privacy Policy
+		</div>
+		<div class="col-xs-12">
+			<div class="about-content">
+				<div>Personal Information Collection Statement</div>
+				<div>When you visit this website, we will have record of your Domain Name Server
+				address and the pages you have visited. This information may be used by us for statistical purpose only.</div>
+
+				<div>Policy on Personal Data</div>
+				<div>For the University&#39;s policy on personal data, please click <a href="http://www.cuhk.edu.hk/policy/pdo/en/">here</a>.</div>
+			</div>
+		</div>
 	</div>
 </section>
 

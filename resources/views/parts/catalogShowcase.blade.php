@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+		<div class="col-xs-12">
 			<input class="catalog-search-bar" type="text" name="search" placeholder="Search">
 			@foreach($payload as $type => $records)
 			<div class="form-check">
@@ -43,9 +43,6 @@
 			</div>
 		</div>	
 		@endforeach
-
-	</div>
-</section>
 
 <script>
 var data = JSON.parse('{!!json_encode($payload)!!}');

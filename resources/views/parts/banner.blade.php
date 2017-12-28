@@ -66,7 +66,7 @@
 		<div class="nav-header-big col-xs-12 col-lg-9">
 			<div class="row">
 				<a href="/about"><div class="col-xs-3">ABOUT</div></a>
-				<a href="/catalogue"><div class="col-xs-3">CATALOGUE</div></a>
+				<a href="/catalogue"><div class="col-xs-3">BOOKING</div></a>
 				<a href="/project"><div class="col-xs-3">PROJECTS</div></a>
 				<a href="/guideline"><div class="col-xs-3">GUIDELINE</div></a>
 			</div>
